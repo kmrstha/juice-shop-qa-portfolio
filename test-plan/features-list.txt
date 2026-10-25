@@ -1,0 +1,83 @@
+FEATURE: Registration
+Location: Account menu > Login > Not yet a customer?
+Fields: Email, Password, Repeat Password, Security Question (dropdown), Answer
+Actions: Register button, "Show password advice" toggle
+Normal behavior: Valid details create an account and return to the login page
+Notes: Password rules shown on screen; unsure if email format is validated
+
+FEATURE: Search
+Location: Magnifying glass icon, top bar
+Fields: Search text box
+Actions: Press Enter to search
+Normal behavior: Product list filters to products matching the text
+Notes: Does it search product descriptions as well as names?
+
+FEATURE: Product list 
+Location: Home page (All products)
+Fields: None
+Actions: Items-per-page selector at the bottom, page navigator arrows, Add to basket button on each card, click a card to open its details
+Normal behavior: Products are shown as cards, each with an image, name and price. Changing items per page changes how many cards show.
+Notes: Is there any sorting or filtering? What happens when the list has more than one page?
+
+FEATURE: Product details
+Location: Click any product card on the home page
+Fields: None
+Actions: Close button, expand/collapse the reviews section, review input box, submit button.
+Normal behavior: A popup opens showing the product image, name, description and price, with the reviews section below it. Closing it returns to the product list.
+Notes: Does the popup close when clicking outside it? Does the description ever show empty?
+
+FEATURE: Product reviews
+Location: Click any product card and click on expandable arrow
+Fields: Expandable dropdown for reviews, review input box, close and submit button 
+Actions: Click on expandable arrow
+Normal behavior: Displays reviews if exist.
+Notes: Does the review input box is shown when user is not logged in?
+
+FEATURE: Basket 
+Location: Add to basket on each product card and top right bar Your Basket icon
+Fields: Quantity per item
+Actions: Increase/decrease quantity (plus and minus), remove item (trash icon), Checkout button
+Normal behavior: Displays any item added with its quantity and price and shows the total price. Changing quantity updates the total.
+Notes: Can quantity go to zero or negative? What is the maximum quantity? Does the basket stay after logout?
+
+FEATURE: Login and logout
+Location: Account menu > Login
+Fields: Email, Password
+Actions: Log in button, "Remember me" checkbox, "Forgot your password?" link, "Not yet a customer?" link, Logout in the account menu
+Normal behavior: Valid credentials log the user in and the account menu shows their email. Logout returns to the logged-out state.
+Notes: What error shows for a wrong password? What happens after repeated failed attempts?
+
+FEATURE: Checkout 
+Location: Checkout button the basket page
+Fields: Address form (Country, Name, Mobile number, Zip code, Address, City, State), delivery option, payment card details, coupon code box with redeem
+Actions: Add new address, choose delivery speed, add or select a payment method, place your order and pay
+Normal behavior: Flow goes in order: address, delivery speed, payment, order summary, then a confirmation page with an order number
+Notes: Which fields are required? What are the delivery options and their prices? Can you change the basket during checkout?
+
+FEATURE: User profile and account pages 
+Location: Account menu after logging in
+Fields: username, profile image upload
+Actions: Your profile, order history, my saved address, my payment options, digital wallet, change password, logout
+Normal behavior: Each option opens its won page showing the user's saved information.
+Notes: Can the username be changed? What rules apply to changing the password?
+
+FEATURE: Contact / feedback form
+Location: Side menu > Customer Feedback
+Fields: Author (pre-filled), Comment, Rating slider, CAPTCHA, Result box for the CAPTCHA answer
+Actions: Submit button
+Normal behavior: A valid form is accepted and a confirmation message appears.
+Notes: Is Comment required? Is there a character limit? What if the CAPTCHA is wrong?
+
+FEATURE: Complaint form (with file upload)
+Location: Side menu > Complaint 
+Fields: Customer email (pre-filled), Message, Invoice file upload
+Actions: Choose file, Submit button
+Normal behavior: A valid complaint is accepted and a confirmation message appears.
+Notes: Which file types and sizes are accepted? Is Message required? What shows for an unsupported file?
+
+FEATURE: Other pages
+Location: Side menu
+Fields: None
+Actions: About Us, Photo Wall, Privacy Policy links
+Normal behavior: bout Us shows company information. Photo Wall shows user photos. Privacy Policy shows the policy text.
+Notes: Do all links work? Does the Photo Wall allow uploads?
