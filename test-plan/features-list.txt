@@ -22,16 +22,16 @@ Notes: Is there any sorting or filtering? What happens when the list has more th
 FEATURE: Product details
 Location: Click any product card on the home page
 Fields: None
-Actions: Close button, expand/collapse the reviews section, review input box, submit button.
+Actions: Close button, expand/collapse the reviews section.
 Normal behavior: A popup opens showing the product image, name, description and price, with the reviews section below it. Closing it returns to the product list.
 Notes: Does the popup close when clicking outside it? Does the description ever show empty?
 
 FEATURE: Product reviews
-Location: Click any product card and click on expandable arrow
-Fields: Expandable dropdown for reviews, review input box, close and submit button 
-Actions: Click on expandable arrow
-Normal behavior: Displays reviews if exist.
-Notes: Does the review input box is shown when user is not logged in?
+Location: Product details popup, in the Reviews section (click the expandable arrow)
+Fields: Review text box
+Actions:  Expand/collapse the reviews section, Submit and Close button
+Normal behavior: The Reviews section shows the number of reviews, and each review shows its author and text. A product with no reviews shows 0. Submitting a review adds it to the list.
+Notes: Review box when logged out: [shown / hidden, from your test]. Is there a character limit on the review text?
 
 FEATURE: Basket 
 Location: Add to basket on each product card and top right bar Your Basket icon
@@ -48,7 +48,7 @@ Normal behavior: Valid credentials log the user in and the account menu shows th
 Notes: What error shows for a wrong password? What happens after repeated failed attempts?
 
 FEATURE: Checkout 
-Location: Checkout button the basket page
+Location: Checkout button on the basket page
 Fields: Address form (Country, Name, Mobile number, Zip code, Address, City, State), delivery option, payment card details, coupon code box with redeem
 Actions: Add new address, choose delivery speed, add or select a payment method, place your order and pay
 Normal behavior: Flow goes in order: address, delivery speed, payment, order summary, then a confirmation page with an order number
@@ -58,7 +58,7 @@ FEATURE: User profile and account pages
 Location: Account menu after logging in
 Fields: username, profile image upload
 Actions: Your profile, order history, my saved address, my payment options, digital wallet, change password, logout
-Normal behavior: Each option opens its won page showing the user's saved information.
+Normal behavior: Each option opens its own page showing the user's saved information.
 Notes: Can the username be changed? What rules apply to changing the password?
 
 FEATURE: Contact / feedback form
@@ -79,5 +79,19 @@ FEATURE: Other pages
 Location: Side menu
 Fields: None
 Actions: About Us, Photo Wall, Privacy Policy links
-Normal behavior: bout Us shows company information. Photo Wall shows user photos. Privacy Policy shows the policy text.
+Normal behavior: About Us shows company information. Photo Wall shows user photos. Privacy Policy shows the policy text.
 Notes: Do all links work? Does the Photo Wall allow uploads?
+
+FEATURE: Forgot password
+Location: Login page > "Forgot your password?" link
+Fields: Email, Security question (shown after the email is entered), Answer, New password, Repeat new password
+Actions: Change button, "Show password advice" toggle
+Normal behavior: The user enters their email, and the security question set at registration is shown. A correct answer with a valid new password changes the password, and the user can log in with the new one.
+Notes: What happens if the email doesn't exist? What if the answer is wrong? Do the same password rules apply as in registration? Does the old password stop working?
+
+FEATURE: Language selector
+Location: Top bar (language and globe icon)
+Fields: None
+Actions: Open the language list, select a language
+Normal behavior: Selecting a language changes the labels, menus and page text to that language.
+Notes: Does the chosen language stay after a refresh or after logging out? Is any text left untranslated? Do the product names and descriptions change too?
