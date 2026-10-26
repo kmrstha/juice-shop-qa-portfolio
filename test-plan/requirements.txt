@@ -1,0 +1,23 @@
+REQ-REG-01: A user can register by entering a valid email, password, repeated password, security question and answer.
+REQ-REG-02: The password and repeat password must match.
+REQ-REG-03: While the password is typed, the message "Password must be 5-40 characters long." is shown.
+REQ-REG-04: A password of 5 to 40 characters is accepted.
+REQ-REG-05: A password shorter than 5 characters is rejected and the Register button stays disabled.
+REQ-REG-06: The password field accepts no more than 40 characters, characters typed after the 40th are not entered.
+REQ-REG-07: The repeat password field accepts no more than 40 characters, characters typed after the 40th are not entered.
+REQ-REG-08: The system rejects an email without a valid format and displays "Email address is not valid.".
+REQ-REG-09: Registering with an email that is already registered is rejected and an error message is shown.
+REQ-REG-10: After successful registration, the user is returned to the login page.
+REQ-REG-11: When "Show password advice" is toggled on, the following list is shown:
+- contains at least one lower character
+- contains at least one upper character
+- contains at least one digit
+- contains at least one special character
+- contains at least 8 characters
+REQ-REG-12: The password rules shown to the user match the rules the system enforces.
+REQ-REG-13: The register button stays disabled until all required fields are filled.
+REQ-REG-14: When the repeated password differs from the password, an error message is shown and registration is not completed.
+REQ-REG-15: The security question dropdown offers a list of questions and one must be selected to register.
+REQ-REG-16: The security answer is required to register.
+REQ-REG-17: Characters typed in the password and repeat password fields are masked.
+REQ-REG-18: The Password field shows a character counter in the form "entered/limit", where the limit equals the maximum allowed length of 40.
