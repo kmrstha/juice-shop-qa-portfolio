@@ -39,6 +39,6 @@ Note: The intended rule is unclear. The password field says 5-40 characters, whi
 
 Evidence:
 
-Advice list: ![Advice list](../evidence/BUG-01-advice-list.png) 
-Registration Success: ![Registration succeeded with 12345](../evidence/BUG-01-registration-success.png)
+![Advice list](../evidence/BUG-01-advice-list.png) 
+![Registration succeeded with 12345](../evidence/BUG-01-registration-success.png)
 
