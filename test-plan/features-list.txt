@@ -31,7 +31,7 @@ Location: Product details popup, in the Reviews section (click the expandable ar
 Fields: Review text box
 Actions:  Expand/collapse the reviews section, Submit and Close button
 Normal behavior: The Reviews section shows the number of reviews, and each review shows its author and text. A product with no reviews shows 0. Submitting a review adds it to the list.
-Notes: Review box when logged out: [shown / hidden, from your test]. Is there a character limit on the review text?
+Notes: Review box when logged out is  hidden. Is there a character limit on the review text?
 
 FEATURE: Basket 
 Location: Add to basket on each product card and top right bar Your Basket icon
@@ -43,7 +43,7 @@ Notes: Can quantity go to zero or negative? What is the maximum quantity? Does t
 FEATURE: Login and logout
 Location: Account menu > Login
 Fields: Email, Password
-Actions: Log in button, "Remember me" checkbox, "Forgot your password?" link, "Not yet a customer?" link, Logout in the account menu
+Actions: Log in button, "Remember me" checkbox, "Forgot your password?" link, "Not yet a customer?" link, Logout in the account menu, Google login
 Normal behavior: Valid credentials log the user in and the account menu shows their email. Logout returns to the logged-out state.
 Notes: What error shows for a wrong password? What happens after repeated failed attempts?
 

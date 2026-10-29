@@ -21,3 +21,38 @@ REQ-REG-15: The security question dropdown offers a list of questions and one mu
 REQ-REG-16: The security answer is required to register.
 REQ-REG-17: Characters typed in the password and repeat password fields are masked.
 REQ-REG-18: The Password field shows a character counter in the form "entered/limit", where the limit equals the maximum allowed length of 40.
+
+REQ-LOG-01: A registered user who enters the correct email and password is logged in.
+REQ-LOG-02: The system displays "Invalid email or password" when the email is not registered.
+REQ-LOG-03: The system displays error message "Invalid email or password" when the password does not match.
+REQ-LOG-04: The login button is disabled until both the email and the password are entered.
+REQ-LOG-05: The system displays "Please provide an email address" when the email field is left empty after being selected.
+REQ-LOG-06: The system displays "Please provide a password" when the password field is left empty after being selected.
+REQ-LOG-07: When "Remember me" is ticked and the user logs in, then logs out, the email field on the login page is pre-filled.
+REQ-LOG-08: When "Remember me" is not ticked, the email field on the login page is empty after logout.
+REQ-LOG-09: The user is redirected to the home page after a successful login.
+REQ-LOG-10: After successful login, the account menu shows the user's email.
+REQ-LOG-11: Characters typed in the password field are masked.
+REQ-LOG-12: Clicking the eye icon shows the typed password and clicking it again masks it.
+REQ-LOG-13: The log in page shows a "Log in with Google" option.
+REQ-LOG-14: Clicking "Log in with Google" directs to Google log in page.
+REQ-LOG-15: After logout, the user is redirected to the home page and the account menu shows the log in option.
+REQ-LOG-16: Clicking "Forgot your password" link opens the Forgot Password page.
+REQ-LOG-17: Clicking "Not yet a customer?" directs to user registration page.
+
+QUESTIONS AND POTENTIAL DEFECTS
+
+Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
+
+Q-02: The password field stops input at 40 characters but the repeat password field accepts more. With 41 characters typed in both, "Passwords do not match" is shown and registration is blocked. (BUG-02, REQ-REG-07)
+
+Q-03: Does the server reject a password longer than 40 characters when it is sent directly without the browser? To test with postman in the API testing project.
+
+Q-04: The password counter shows "10/20" at 10 characters and "40/20" at 40. The limit shown (20) does not match the allowed maximum (40). The denominator never changes. (BUG-03, REQ-REG-18) Open point: [does the repeat password field show a counter and what limit does it show?]
+
+Q-05: After 6th consecutive failed logins, no lockout, delay or warning appeared. Is lockout or rate limiting intended? Without it, passwords can be guessed by repeated attempts. (Security observation, no requirement yet)
+
+OBSERVATIONS
+- The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
+- The password counter appears only after 5 characters are entered.
+- The same message, "Invalid email or password", is shown for an unregistered email and a wrong password. This does not reveal which emails exist.
