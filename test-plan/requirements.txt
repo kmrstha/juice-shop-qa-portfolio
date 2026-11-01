@@ -25,7 +25,7 @@ REQ-REG-18: The Password field shows a character counter in the form "entered/li
 REQ-LOG-01: A registered user who enters the correct email and password is logged in.
 REQ-LOG-02: The system displays "Invalid email or password" when the email is not registered.
 REQ-LOG-03: The system displays error message "Invalid email or password" when the password does not match.
-REQ-LOG-04: The login button is disabled until both the email and the password are entered.
+REQ-LOG-04: The log in button is disabled until both the email and the password are entered.
 REQ-LOG-05: The system displays "Please provide an email address" when the email field is left empty after being selected.
 REQ-LOG-06: The system displays "Please provide a password" when the password field is left empty after being selected.
 REQ-LOG-07: When "Remember me" is ticked and the user logs in, then logs out, the email field on the login page is pre-filled.
@@ -35,21 +35,34 @@ REQ-LOG-10: After successful login, the account menu shows the user's email.
 REQ-LOG-11: Characters typed in the password field are masked.
 REQ-LOG-12: Clicking the eye icon shows the typed password and clicking it again masks it.
 REQ-LOG-13: The log in page shows a "Log in with Google" option.
-REQ-LOG-14: Clicking "Log in with Google" directs to Google log in page.
+REQ-LOG-14: Clicking "Log in with Google" redirects to Google log in page.
 REQ-LOG-15: After logout, the user is redirected to the home page and the account menu shows the log in option.
-REQ-LOG-16: Clicking "Forgot your password" link opens the Forgot Password page.
+REQ-LOG-16: Clicking "Forgot your password?" link opens the Forgot Password page.
 REQ-LOG-17: Clicking "Not yet a customer?" directs to user registration page.
+
+REQ-BAS-01: Clicking "Add to basket" displays the message "Placed (product name) into basket."
+REQ-BAS-02: Clicking on "Add to basket" again on the same product displays the message "Added another (product name) to basket."
+REQ-BAS-03: Clicking "Your basket" opens the Your Basket page, which lists each added product with its name, quantity and price.
+REQ-BAS-04: The quantity of a single product in the basket cannot be raised above 5 with the plus button.
+REQ-BAS-05: When the plus button is clicked on a product already at a quantity of 5, the message "You can order only up to 5 items of this product." is displayed.
+REQ-BAS-06: At a quantity of 1, clicking the minus button does not reduce the quantity.
+REQ-BAS-07: Clicking the trash icon removes that product from the basket and the total is updated.
+REQ-BAS-08: The total price is shown below the products list.
+REQ-BAS-09: The total price equals the sum of (quantity x price) of every product in the basket.
+REQ-BAS-10: The total price updates when a quantity is changed or a product is removed.
+REQ-BAS-11: After the user logs out and logs in again, the basket still contains the same products and quantities.
+REQ-BAS-12: Adding the same product again increases its quantity in the existing row and does not create a second row.
+REQ-BAS-13: The basket icon shows the total quantity of items in the basket.
+REQ-BAS-14: The checkout button is disabled when the basket is empty.
+REQ-BAS-15: When the basket is empty, the Your Basket page shows a total of 0 and an empty list.
+REQ-BAS-16: Clicking "Add to basket" on a product that is already at a quantity of 5 does not raise its quantity above 5 and displays message "You can order only up to 5 items of this product."
 
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
-
 Q-02: The password field stops input at 40 characters but the repeat password field accepts more. With 41 characters typed in both, "Passwords do not match" is shown and registration is blocked. (BUG-02, REQ-REG-07)
-
 Q-03: Does the server reject a password longer than 40 characters when it is sent directly without the browser? To test with postman in the API testing project.
-
 Q-04: The password counter shows "10/20" at 10 characters and "40/20" at 40. The limit shown (20) does not match the allowed maximum (40). The denominator never changes. (BUG-03, REQ-REG-18) Open point: [does the repeat password field show a counter and what limit does it show?]
-
 Q-05: After 6th consecutive failed logins, no lockout, delay or warning appeared. Is lockout or rate limiting intended? Without it, passwords can be guessed by repeated attempts. (Security observation, no requirement yet)
 
 OBSERVATIONS
