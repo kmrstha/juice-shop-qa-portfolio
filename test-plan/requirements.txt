@@ -111,7 +111,26 @@ REQ-ORD-03: Clicking "Place your order and pay" opens the "Order Completion" pag
 REQ-ORD-04: A placed order appears in Order History with an order ID.
 REQ-ORD-05: After an order is placed, the basket is empty.
 
-
+REQ-FPW-01: Clicking "Forgot your password?" opens the "Forgot Password" page, which shows the Email, Security Question, New Password and Repeat New Password fields.
+REQ-FPW-02: The system displays "Please provide an email address." when the Email field in the forgot password form is left empty after being selected.
+REQ-FPW-03: When an email that is not registered is entered, Security Question, New Password, Repeat New Password and Change button fields are disabled.
+REQ-FPW-04: The system displays "Please provide an answer to your security question." when the Security Question field in the forgot password form is left empty after being selected.
+REQ-FPW-05: The system displays "Please provide your new password." when the New Password field in the forgot password form is left empty after being selected.
+REQ-FPW-06: The system displays "Please repeat your password." when the Repeat New Password field in the forgot password form is left empty after being selected.
+REQ-FPW-07: After a registered email is entered, the Security Question field shows the question chosen at registration as its placeholder text.
+REQ-FPW-08: The system displays "Wrong answer to security question." when the answer to security question is wrong.
+REQ-FPW-09: The system displays "Your password was successfully changed." when the correct answer and matching valid new passwords are submitted.
+REQ-FPW-10: The New Password field is highlighted in red when fewer than 5 characters are entered.
+REQ-FPW-11: The system displays "Passwords do not match" when the New Password and Repeat New Password do not match.
+REQ-FPW-12: The New Password and Repeat New Password fields show a counter in the form "entered/limit", where the limit equals the maximum allowed length.
+REQ-FPW-13: The New Password field accepts 5 to 40 characters, the same length rule as the Password field in registration.
+REQ-FPW-14: After a successful change, the user can log in with the new password and cannot log in with the old one.
+REQ-FPW-15: The Forgot Password page offers a "Show password advice" toggle that lists the same password recommendations as the registration page.
+REQ-FPW-16: The password rules shown on the Forgot Password page match the rules the system enforces.
+REQ-FPW-
+REQ-FPW-
+REQ-FPW-
+REQ-FPW-
 
 QUESTIONS AND POTENTIAL DEFECTS
 
@@ -121,6 +140,7 @@ Q-03: Does the server reject a password longer than 40 characters when it is sen
 Q-04: The password counter shows "10/20" at 10 characters and "40/20" at 40. The limit shown (20) does not match the allowed maximum (40). The denominator never changes. (BUG-03, REQ-REG-18) Open point: [does the repeat password field show a counter and what limit does it show?]
 Q-05: After 6th consecutive failed logins, no lockout, delay or warning appeared. Is lockout or rate limiting intended? Without it, passwords can be guessed by repeated attempts. (Security observation, no requirement yet)
 Q-06: The Expiry Year field offers only years from 2080. A card expiring before 2080 cannot be entered. Is this range intended? (Potential defect, REQ-PAY-12)
+Q-07: The Forgot password fields show"/20" and accept any number of characters, registration stops at 40. Is the length rule intended to differ? (Potential defect, REQ-FPW-12, REQ-FPW-13)
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
