@@ -66,17 +66,17 @@ REQ-ADR-05: The system displays "Please provide a ZIP code." when the ZIP Code f
 REQ-ADR-06: The system displays "Please provide an address." when the Address field is left empty after being selected.
 REQ-ADR-07: The system displays "Please provide a city." when the City field is left empty after being selected.
 REQ-ADR-08: The Mobile Number field accepts digits.
-REQ-ADR-09: Letter typed in the Mobile Number field are not entered.
+REQ-ADR-09: Letters typed in the Mobile Number field are not entered.
 REQ-ADR-10: The Mobile Number field accepts a "+" character.
 REQ-ADR-11: The Mobile Number field does not accept spaces.
 REQ-ADR-12: The system displays "Mobile number must match 1000000-9999999999 format." when the Mobile Number field contains fewer than 7 or more than 10 digits.
-REQ-ADR-13: The ZIP code field is highlights in red when more than 8 characters are entered.
+REQ-ADR-13: The ZIP code field is highlighted in red when more than 8 characters are entered.
 REQ-ADR-14: The form cannot be submitted while the ZIP code field is highlighted in red.
 REQ-ADR-15: The Address field accepts up to 160 characters, characters typed after the 160th are not entered.
 REQ-ADR-16: A newly added address appears in the list of saved addresses on the "Select an Address" page.
 
 DELIVERY
-REQ-DEL-01: The system offers three delivery options, each showing its price and expected delivery time.
+REQ-DEL-01: The system offers three delivery options, each showing its price and expected delivery time (see table below).
 REQ-DEL-02: Choosing a different delivery option changes the total by the difference in delivery cost.
 | Option | Price | Expected delivery |
 | --- | --- | --- |
@@ -89,26 +89,26 @@ REQ-PAY-01: The system displays "Please provide a name." when the Name field in 
 REQ-PAY-02: The system displays "Please enter your card number." when the Card Number field is left empty after being selected.
 REQ-PAY-03: The system displays "Please enter an expiry month." when the Expiry Month field is left empty after being selected.
 REQ-PAY-04: The system displays "Please enter an expiry year." when the Expiry Year field is left empty after being selected.
-REQ-PAY-05: The card number field must accept digits only.
+REQ-PAY-05: The card number field accepts digits only.
 REQ-PAY-06: The system displays "Please enter a valid sixteen digit card number." when the user leaves the Card Number field after entering a number that is not 16 digits long.
-REQ-PAY-07: The submit button stays disabled while the Card Number field is invalid.
-REQ-PAY-08: Last 4 digits of a card, name and expiry month and years are saved when the submit button is clicked.
-REQ-PAY-09: The saved card is shown at the top of the payment methods list on the My Payment Options page.
+REQ-PAY-07: The Submit button stays disabled while the Card Number field is invalid.
+REQ-PAY-08: When the Submit button is clicked, the last 4 digits of the card, the name and the expiry month and years are saved.
+REQ-PAY-09: The saved card is shown at the top of the payment methods list on the "My Payment Options" page.
 REQ-PAY-10: The payment step offers these other options: Donations and Merchandise.
-REQ-PAY-11: The continue button is disabled until a payment option is selected.
+REQ-PAY-11: The Continue button is disabled until a payment option is selected.
 REQ-PAY-12: The Expiry Year field offers the years 2080 to 2099.
 
 COUPON
 REQ-CPN-01: The system displays "Coupon code must be 10 characters long." while fewer than 10 characters are entered in the coupon field.
-REQ-CPN-02: The redeem button is disabled until 10 characters are entered.
+REQ-CPN-02: The Redeem button is disabled until 10 characters are entered.
 REQ-CPN-03: The system displays "Invalid coupon." when the coupon is invalid.
 REQ-CPN-04: The system displays "Your discount of 10% will be applied during checkout." when the redeem code is accepted.
 
 ORDER 
-REQ-ORD-01: Clicking Continue opens the "Order Summary" page, which shows the delivery address, payment method, order summary and basket (product, quantity, price). 
+REQ-ORD-01: Clicking Continue opens the "Order Summary" page, which shows the delivery address, payment method and basket (product, quantity, price). 
 REQ-ORD-02: The order total equals the product total, minus the coupon discount on the product total, plus the delivery cost.
-REQ-ORD-03: Clicking "Place your order and pay" opens "Order Completion" page.
-REQ-ORD-04: A placed order appears in Order History with and order ID.
+REQ-ORD-03: Clicking "Place your order and pay" opens the "Order Completion" page.
+REQ-ORD-04: A placed order appears in Order History with an order ID.
 REQ-ORD-05: After an order is placed, the basket is empty.
 
 
