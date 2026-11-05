@@ -127,10 +127,15 @@ REQ-FPW-13: The New Password field accepts 5 to 40 characters, the same length r
 REQ-FPW-14: After a successful change, the user can log in with the new password and cannot log in with the old one.
 REQ-FPW-15: The Forgot Password page offers a "Show password advice" toggle that lists the same password recommendations as the registration page.
 REQ-FPW-16: The password rules shown on the Forgot Password page match the rules the system enforces.
-REQ-FPW-
-REQ-FPW-
-REQ-FPW-
-REQ-FPW-
+
+REQ-SRC-01: Clicking the magnifying glass icon opens the search box and pressing Enter runs the search.
+REQ-SRC-02: When the full product name is entered, the matching product is displayed.
+REQ-SRC-03: A product whose name contains the entered text is displayed in the results.
+REQ-SRC-04: A product whose description contains the entered text is displayed in the results.
+REQ-SRC-05: The search is not case-sensitive.
+REQ-SRC-06: When the search box is empty and Enter is pressed, the whole product list is displayed.
+REQ-SRC-07: The system displays "No results found. Try adjusting your search to find what you're looking for." when no product name or description matches the entered text.
+REQ-SRC-08: When special characters are entered in the search box, the page shows full product list without errors.
 
 QUESTIONS AND POTENTIAL DEFECTS
 
@@ -141,6 +146,7 @@ Q-04: The password counter shows "10/20" at 10 characters and "40/20" at 40. The
 Q-05: After 6th consecutive failed logins, no lockout, delay or warning appeared. Is lockout or rate limiting intended? Without it, passwords can be guessed by repeated attempts. (Security observation, no requirement yet)
 Q-06: The Expiry Year field offers only years from 2080. A card expiring before 2080 cannot be entered. Is this range intended? (Potential defect, REQ-PAY-12)
 Q-07: The Forgot password fields show"/20" and accept any number of characters, registration stops at 40. Is the length rule intended to differ? (Potential defect, REQ-FPW-12, REQ-FPW-13)
+Q-08: Searching for characters shows different products whose names and descriptions do not contain it. Is this intended?
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
