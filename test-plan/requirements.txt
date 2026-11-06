@@ -137,6 +137,23 @@ REQ-SRC-06: When the search box is empty and Enter is pressed, the whole product
 REQ-SRC-07: The system displays "No results found. Try adjusting your search to find what you're looking for." when no product name or description matches the entered text.
 REQ-SRC-08: When special characters are entered in the search box, the page shows full product list without errors.
 
+REQ-REV-01: Opening a product shows the Reviews section with the review count.
+REQ-REV-02: A logged-in user sees a review input box in the Reviews section.
+REQ-REV-03: When a review is submitted, the text is removed from the input box.
+REQ-REV-04: When a review is submitted, the review count increases by 1 and the review appears at the bottom of the review list.
+REQ-REV-05: A submitted review is still shown after the page is reloaded.
+REQ-REV-06: The author's email address is displayed with each review.
+REQ-REV-07: A thumbs up button and its count are shown at the end of each review.
+REQ-REV-08: Clicking the thumbs up button increases its count by 1.
+REQ-REV-09: The thumbs up button of a review cannot be clicked a second time by the same user.
+REQ-REV-10: The Submit button is disabled until a review is written.
+REQ-REV-11: The Submit button is disabled when the review contains only spaces.
+REQ-REV-12: The review input box accepts up to 160 characters; characters typed after the 160th are not entered.
+REQ-REV-13: A character counter is shown for the review input box in the form "entered/160".
+REQ-REV-14: The text "Max. 160 characters" is shown below the review input box.
+REQ-REV-15: When the user is logged out, the review count, the reviews and the thumbs up button are shown and the review input box is not shown.
+REQ-REV-16: A product with no reviews shows a review count of 0.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -147,6 +164,7 @@ Q-05: After 6th consecutive failed logins, no lockout, delay or warning appeared
 Q-06: The Expiry Year field offers only years from 2080. A card expiring before 2080 cannot be entered. Is this range intended? (Potential defect, REQ-PAY-12)
 Q-07: The Forgot password fields show"/20" and accept any number of characters, registration stops at 40. Is the length rule intended to differ? (Potential defect, REQ-FPW-12, REQ-FPW-13)
 Q-08: Searching for characters shows different products whose names and descriptions do not contain it. Is this intended?
+Q-09: Each review shows the author's email address to all visitors, including logged-out users. Is this intended?
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
