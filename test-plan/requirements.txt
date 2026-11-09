@@ -171,6 +171,23 @@ REQ-FDB-13: The system displays "Please enter the result of the CAPTCHA." when a
 REQ-FDB-15: The system displays "Thank you for your feedback." after a valid feedback is submitted.
 REQ-FDB-16: After a valid feedback is submitted, the form is reset and a new CAPTCHA question is shown.
 
+REQ-CMP-01: Clicking "Complaint" in the side menu opens the Complaint form.
+REQ-CMP-02: The customer email field is pre-filled and cannot be edited.
+REQ-CMP-03: The Submit button is disabled until a message is entered.
+REQ-CMP-04: The Message field shows the label "Message" when it is empty.
+REQ-CMP-05: The Message field shows the placeholder "What would you like to tell us?" when it is clicked while empty.
+REQ-CMP-06: The system displays "Please provide a text." when the Message field is left empty after being selected.
+REQ-CMP-07: The Message field accepts up to 4096, characters typed after the 4096th are not entered.
+REQ-CMP-08: The text "Max. 4096 characters" is shown below the Message field.
+REQ-CMP-09: A character counter is shown for the Message field in the form "entered/4096".
+REQ-CMP-10: The invoice file upload accepts PDF files only.
+REQ-CMP-11: The Submit button is disabled while a file that is not a PDF is selected.
+REQ-CMP-12: A PDF of 100 KB or less is accepted.
+REQ-CMP-13: The system displays "File too large. Maximum 100 KB allowed." when the file is more than 100 KB.
+REQ-CMP-14: The system displays "Customer support will get in touch with you soon! Your complaint reference is #[number]" after a valid complaint is submitted.
+REQ-CMP-15: After a valid complaint is submitted, the form is reset.
+REQ-CMP-16: Each submitted complaint receives a different reference number.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -191,3 +208,4 @@ OBSERVATIONS
 The mobile number message reads "Mobile number must match 1000000-9999999999 format.", which reveals the accepted range as 7 to 10 digits.
 - An expired card cannot be tested, because no past year can be selected.
 - The feedback form masks the author's email as "***", but the reviews show the full author email to all visitors. The two features handle the same data differently. (See Q-09.)
+- When a file that is not a PDF is selected, no message is shown. The Submit button is disabled with no explanation.
