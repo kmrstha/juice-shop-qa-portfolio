@@ -148,11 +148,28 @@ REQ-REV-08: Clicking the thumbs up button increases its count by 1.
 REQ-REV-09: The thumbs up button of a review cannot be clicked a second time by the same user.
 REQ-REV-10: The Submit button is disabled until a review is written.
 REQ-REV-11: The Submit button is disabled when the review contains only spaces.
-REQ-REV-12: The review input box accepts up to 160 characters; characters typed after the 160th are not entered.
+REQ-REV-12: The review input box accepts up to 160 characters, characters typed after the 160th are not entered.
 REQ-REV-13: A character counter is shown for the review input box in the form "entered/160".
 REQ-REV-14: The text "Max. 160 characters" is shown below the review input box.
 REQ-REV-15: When the user is logged out, the review count, the reviews and the thumbs up button are shown and the review input box is not shown.
 REQ-REV-16: A product with no reviews shows a review count of 0.
+
+REQ-FDB-01: Clicking "Customer Feedback" in the side menu opens Customer Feedback form.
+REQ-FDB-02: When the user is logged in, the Author field shows "***" and cannot be edited.
+REQ-FDB-03: When the user is logged out, the Customer Feedback form is available and the Author field shows "anonymous".
+REQ-FDB-04: The Submit button is disabled until a comment and a CAPTCHA result are entered.
+REQ-FDB-05: The Submit button is disabled when the comment contains only spaces.
+REQ-FDB-06: The comment field shows the placeholder "What did you like or dislike?" when it is clicked while empty.
+REQ-FDB-07: The system displays "Please provide a comment." when the comment field is left empty after being selected.
+REQ-FDB-08: The comment field accepts up to 160 characters, characters typed after the 160th are not entered.
+REQ-FDB-09: The text "Max. 160 characters" is shown below the comment field.
+A character counter is shown for the Comment field in the form "entered/160".
+REQ-FDB-10: The rating control is a slider with a range of 1 to 5 and a default value of 1.
+REQ-FDB-11: A CAPTCHA question is shown with a result input box.
+REQ-FDB-12:  The CAPTCHA result field shows the placeholder "Please enter the result of the CAPTCHA." when it is clicked while empty.
+REQ-FDB-13: The system displays "Please enter the result of the CAPTCHA." when an incorrect CAPTCHA result is submitted.
+REQ-FDB-15: The system displays "Thank you for your feedback." after a valid feedback is submitted.
+REQ-FDB-16: After a valid feedback is submitted, the form is reset and a new CAPTCHA question is shown.
 
 QUESTIONS AND POTENTIAL DEFECTS
 
@@ -173,3 +190,4 @@ OBSERVATIONS
 - The delivery option text shows "1 Days".
 The mobile number message reads "Mobile number must match 1000000-9999999999 format.", which reveals the accepted range as 7 to 10 digits.
 - An expired card cannot be tested, because no past year can be selected.
+- The feedback form masks the author's email as "***", but the reviews show the full author email to all visitors. The two features handle the same data differently. (See Q-09.)
