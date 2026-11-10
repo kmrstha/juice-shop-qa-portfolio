@@ -188,6 +188,22 @@ REQ-CMP-14: The system displays "Customer support will get in touch with you soo
 REQ-CMP-15: After a valid complaint is submitted, the form is reset.
 REQ-CMP-16: Each submitted complaint receives a different reference number.
 
+REQ-PRF-01: Clicking the user's email in the Account menu opens the "[exact page title]" page.
+REQ-PRF-02: The Email field is pre-filled with the user's email and cannot be edited.
+REQ-PRF-03: The Role field is pre-filled with "customer" and cannot be edited.
+REQ-PRF-04: When a username is entered and Set is clicked, the username is shown below the profile picture.
+REQ-PRF-05: When the Username field is empty and Set is clicked, the existing username is removed.
+REQ-PRF-06: The username is still shown after the page is reloaded.
+REQ-PRF-07: The Upload Picture section provides a way to choose an image file.
+REQ-PRF-08: A PNG or JPG file chosen with Upload Picture becomes the profile picture.
+REQ-PRF-09: Clicking Upload Picture with no file chosen shows a readable error message and keeps the user on the profile page.
+REQ-PRF-10: The profile picture is still shown after the user logs out and logs in again.
+REQ-PRF-11: The Link Image section provides a field for an image URL and a "Link Image" button.
+REQ-PRF-12: An image URL submitted with Link Image becomes the profile picture.
+REQ-PRF-13: When the Link Image field is empty and the button is clicked, the profile picture area shows a picture that is not loaded.
+REQ-PRF-14: When the Link Image field contains text that is not a URL and the button is clicked, the profile picture area shows a picture that is not loaded.
+REQ-PRF-15: When the Link Image field is empty or invalid, the system displays an error message and keeps the current profile picture.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -199,6 +215,11 @@ Q-06: The Expiry Year field offers only years from 2080. A card expiring before 
 Q-07: The Forgot password fields show"/20" and accept any number of characters, registration stops at 40. Is the length rule intended to differ? (Potential defect, REQ-FPW-12, REQ-FPW-13)
 Q-08: Searching for characters shows different products whose names and descriptions do not contain it. Is this intended?
 Q-09: Each review shows the author's email address to all visitors, including logged-out users. Is this intended?
+Q-10: Link Image accepts a URL typed by the user. Which URLs are intended to be accepted? (Security observation, to review in the security part of the project.)
+Q-11: Clicking Set with an empty username field removes the existing username with no message. Is this intended? (Defect candidate, REQ-PRF-05)
+Q-12: Clicking Upload Picture shows the raw response {"error":"File is not passed"} and no file chooser is available. (Defect candidate, REQ-PRF-07, REQ-PRF-09)
+Q-13: Submitting a valid image URL with Link Image does not change the profile picture. (Defect candidate, REQ-PRF-12)
+Q-14: Clicking Link Image with an empty field or with text that is not a URL leaves the profile picture area showing a picture that is not loaded, with no error message. (Defect candidate, REQ-PRF-13, REQ-PRF-14)
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
@@ -209,3 +230,5 @@ The mobile number message reads "Mobile number must match 1000000-9999999999 for
 - An expired card cannot be tested, because no past year can be selected.
 - The feedback form masks the author's email as "***", but the reviews show the full author email to all visitors. The two features handle the same data differently. (See Q-09.)
 - When a file that is not a PDF is selected, no message is shown. The Submit button is disabled with no explanation.
+- No confirmation message is shown after a username is set.
+- No limit was found on the username length. [Update with the longest name you tested.]
