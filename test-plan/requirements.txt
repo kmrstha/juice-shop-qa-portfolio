@@ -223,6 +223,13 @@ REQ-ORH-15: The total price on the confirmation equals the sum of the product pr
 REQ-ORH-16: The products and quantities on the confirmation match the order in the Order History list.
 REQ-ORH-17: When the user has no orders, the Order History page shows "No results found. You have not placed any orders yet."
 
+REQ-ADD-01: Clicking "My Saved Addresses" opens the "My saved addresses" page.
+REQ-ADD-02: Each saved address shows its name, address and country. 
+REQ-ADD-03: An address added during checkout appears in the saved addresses list.
+REQ-ADD-04: The "Add New Address" button opens the address form with the same required fields as in checkout.
+REQ-ADD-05: A saved address can be edited and the changes are shown in the list. 
+REQ-ADD-06: A saved address can be deleted and is removed from the list. 
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
