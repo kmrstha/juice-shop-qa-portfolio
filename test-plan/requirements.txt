@@ -204,6 +204,25 @@ REQ-PRF-13: When the Link Image field is empty and the button is clicked, the pr
 REQ-PRF-14: When the Link Image field contains text that is not a URL and the button is clicked, the profile picture area shows a picture that is not loaded.
 REQ-PRF-15: When the Link Image field is empty or invalid, the system displays an error message and keeps the current profile picture.
 
+ORDER HISTORY
+REQ-ORH-01: Clicking "Order History" in the Account menu opens the "Order History" page.
+REQ-ORH-02: Each placed order is listed with its order ID, total price and products.
+REQ-ORH-03: The total price of an order in the list equals the total shown on the Order Completion page when the order was placed.
+REQ-ORH-04: A newly placed order appears in the list without the user logging out.
+REQ-ORH-05: A user sees only their own orders.
+REQ-ORH-06: Each order shows its delivery status, for example "In Transit".
+REQ-ORH-07: Clicking "Track Order" for an order opens a page headed "Search Results - [order ID]" that shows the expected delivery, the ordered products and the bonus points earned.
+REQ-ORH-08: The Expected Delivery shown on the tracking page matches the delivery option chosen at checkout.
+REQ-ORH-09: The tracking page lists each product of the order with its price, quantity and total price.
+REQ-ORH-10: The total price shown for each product equals its price multiplied by its quantity.
+REQ-ORH-11: The tracking page shows "Bonus Points Earned" with the number of points for the order.
+REQ-ORH-12: Clicking "Print Order Confirmation" opens a page headed "OWASP Juice Shop Order Confirmation" for that order.
+REQ-ORH-13: The order confirmation shows the customer, the order number, the date, each product with its quantity and price, the delivery price, the total price and the bonus points earned.
+REQ-ORH-14: The order number on the confirmation matches the order ID in the Order History list.
+REQ-ORH-15: The total price on the confirmation equals the sum of the product prices plus the delivery price.
+REQ-ORH-16: The products and quantities on the confirmation match the order in the Order History list.
+REQ-ORH-17: When the user has no orders, the Order History page shows "No results found. You have not placed any orders yet."
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
