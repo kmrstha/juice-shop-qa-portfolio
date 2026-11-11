@@ -223,12 +223,19 @@ REQ-ORH-15: The total price on the confirmation equals the sum of the product pr
 REQ-ORH-16: The products and quantities on the confirmation match the order in the Order History list.
 REQ-ORH-17: When the user has no orders, the Order History page shows "No results found. You have not placed any orders yet."
 
+My Saved Addresses
 REQ-ADD-01: Clicking "My Saved Addresses" opens the "My saved addresses" page.
 REQ-ADD-02: Each saved address shows its name, address and country. 
 REQ-ADD-03: An address added during checkout appears in the saved addresses list.
-REQ-ADD-04: The "Add New Address" button opens the address form with the same required fields as in checkout.
-REQ-ADD-05: A saved address can be edited and the changes are shown in the list. 
-REQ-ADD-06: A saved address can be deleted and is removed from the list. 
+REQ-ADD-04: The "Add New Address" button opens the address form.
+REQ-ADD-05: The address form on this page has the same required fields as the address form in checkout.
+REQ-ADD-06: The address form on this page applies the same validation messages and limits as in checkout (REQ-ADR-02 to REQ-ADR-15).
+REQ-ADD-07: A new address saved from this page appears in the saved addresses list.
+REQ-ADD-08: A saved address can be edited and the changes are shown in the list. 
+REQ-ADD-09: A saved address can be deleted and is removed from the list.
+REQ-ADD-10: A deleted address no longer appears in the address list during checkout.
+REQ-ADD-11: A user sees only their own saved addresses.
+REQ-ADD-12: When the user has no saved addresses, the page shows "Add new address" button and an empty address list.
 
 QUESTIONS AND POTENTIAL DEFECTS
 
@@ -246,6 +253,8 @@ Q-11: Clicking Set with an empty username field removes the existing username wi
 Q-12: Clicking Upload Picture shows the raw response {"error":"File is not passed"} and no file chooser is available. (Defect candidate, REQ-PRF-07, REQ-PRF-09)
 Q-13: Submitting a valid image URL with Link Image does not change the profile picture. (Defect candidate, REQ-PRF-12)
 Q-14: Clicking Link Image with an empty field or with text that is not a URL leaves the profile picture area showing a picture that is not loaded, with no error message. (Defect candidate, REQ-PRF-13, REQ-PRF-14)
+Q-15: The tracking page does not show the delivery status ("In Transit") that is shown in Order History. Should it? (Question, REQ-ORH-06, REQ-ORH-07)
+Q-16: The tracking page shows "Bonus Points Earned: 0". Is 0 expected for this order? (Question, REQ-ORH-11)
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
@@ -257,4 +266,9 @@ The mobile number message reads "Mobile number must match 1000000-9999999999 for
 - The feedback form masks the author's email as "***", but the reviews show the full author email to all visitors. The two features handle the same data differently. (See Q-09.)
 - When a file that is not a PDF is selected, no message is shown. The Submit button is disabled with no explanation.
 - No confirmation message is shown after a username is set.
-- No limit was found on the username length. [Update with the longest name you tested.]
+- No limit was found on the username length.
+- The tracking page is headed "Search Results - [order ID]" instead of a tracking title.
+- Expected Delivery is written "1 Days".
+- The order confirmation shows the customer's full email address.
+- Deleting a saved address happens immediately, with no confirmation prompt.
+- With no saved addresses, the page shows only the "Add New Address" button and no message.
