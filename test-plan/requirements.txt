@@ -250,6 +250,20 @@ REQ-PMT-09: A deleted card can no longer appears in the payment methods list dur
 REQ-PMT-10: A user sees only their own saved cards.
 REQ-PMT-11: When the user has no saved cards, the page shows "Add new card" expandable section and an empty payment options.
 
+REQ-WAL-01: Clicking "Digital Wallet" opens the "Digital Wallet" page.
+REQ-WAL-02: The page shows the wallet balance. 
+REQ-WAL-03: The wallet balance of a new account is 0.
+REQ-WAL-04: The amount field provides up and down arrows that increase or decrease the amount.
+REQ-WAL-05: The system accepts an amount between 10 and 1000 when adding money. 
+REQ-WAL-06: The system displays "You can add a minimum of 10¤ and only up to 1000¤." when an amount outside the allowed range is entered.
+REQ-WAL-07: The system displays "Please enter an amount" when the amount field is left empty after being selected.
+REQ-WAL-08: The Deposit button is disabled until an amount within the allowed range is entered.
+REQ-WAL-09: Clicking "Deposit" opens the payment options page, which lists all the user's saved payment options.
+REQ-WAL-10: The payment options page for the wallet provides a way to add a new card, with the same fields, validation messages and limits as in checkout.
+REQ-WAL-11: Selecting a payment option and clicking "Continue" opens the Digital Wallet page.
+REQ-WAL-12: After money is added, the balance increases by the amount deposited.
+REQ-WAL-13: The wallet balance is still shown correctly after the page is reloaded.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
