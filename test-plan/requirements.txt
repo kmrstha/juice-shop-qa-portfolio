@@ -264,6 +264,19 @@ REQ-WAL-11: Selecting a payment option and clicking "Continue" opens the Digital
 REQ-WAL-12: After money is added, the balance increases by the amount deposited.
 REQ-WAL-13: The wallet balance is still shown correctly after the page is reloaded.
 
+Change Password
+REQ-CHP-01: Clicking "Change Password" opens the "Change Password" page, which shows the Current Password, New Password and Repeat New Password fields.
+REQ-CHP-02: The Change button is disabled until all three fields are filled.
+REQ-CHP-03: The system displays "Please provide your current password." when the Current Password field is left empty after being selected.
+REQ-CHP-04: The system displays "Current password is not correct." when the current password entered is wrong.
+REQ-CHP-05: The system displays "Passwords do not match" when the New Password and Repeat New Password do not match.
+REQ-CHP-06: The system displays "Your password was successfully changed." when the password is changed successfully.
+REQ-CHP-07: After a successful change, the user can log in with the new password and cannot log in with the old one.
+REQ-CHP-08: The message "Password must be 5-40 characters long." is shown below the New Password field.
+REQ-CHP-09: The New Password field accepts 5 to 40 characters and does not accept a password outside that range.
+REQ-CHP-10: A character counter is shown for the New Password field in the form "entered/40".
+REQ-CHP-11 The password rules shown to the user match the rules the system enforces.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -282,6 +295,7 @@ Q-13: Submitting a valid image URL with Link Image does not change the profile p
 Q-14: Clicking Link Image with an empty field or with text that is not a URL leaves the profile picture area showing a picture that is not loaded, with no error message. (Defect candidate, REQ-PRF-13, REQ-PRF-14)
 Q-15: The tracking page does not show the delivery status ("In Transit") that is shown in Order History. Should it? (Question, REQ-ORH-06, REQ-ORH-07)
 Q-16: The tracking page shows "Bonus Points Earned: 0". Is 0 expected for this order? (Question, REQ-ORH-11)
+Q-17: Change Password accepts a new password identical to the current password. Is this intended?
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
