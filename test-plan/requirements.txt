@@ -277,6 +277,15 @@ REQ-CHP-09: The New Password field accepts 5 to 40 characters and does not accep
 REQ-CHP-10: A character counter is shown for the New Password field in the form "entered/40".
 REQ-CHP-11 The password rules shown to the user match the rules the system enforces.
 
+Language Selector
+REQ-LNG-01: Clicking the language icon in the top bar opens a list of available languages.
+REQ-LNG-02: The language list offers 43 languages.
+REQ-LNG-03: The default language of the application is English.
+REQ-LNG-04: Selecting a language changes the labels, menus and page text to that language.
+REQ-LNG-05: The selected language is still applied after the page is reloaded.
+REQ-LNG-06: The selected language is still applied after the user logs out and logs in again.
+REQ-LNG-07: Product names and descriptions do not change when a language is selected.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
