@@ -163,11 +163,11 @@ REQ-FDB-06: The comment field shows the placeholder "What did you like or dislik
 REQ-FDB-07: The system displays "Please provide a comment." when the comment field is left empty after being selected.
 REQ-FDB-08: The comment field accepts up to 160 characters, characters typed after the 160th are not entered.
 REQ-FDB-09: The text "Max. 160 characters" is shown below the comment field.
-A character counter is shown for the Comment field in the form "entered/160".
-REQ-FDB-10: The rating control is a slider with a range of 1 to 5 and a default value of 1.
-REQ-FDB-11: A CAPTCHA question is shown with a result input box.
-REQ-FDB-12:  The CAPTCHA result field shows the placeholder "Please enter the result of the CAPTCHA." when it is clicked while empty.
-REQ-FDB-13: The system displays "Please enter the result of the CAPTCHA." when an incorrect CAPTCHA result is submitted.
+REQ-FDB-10: A character counter is shown for the Comment field in the form "entered/160".
+REQ-FDB-11: The rating control is a slider with a range of 1 to 5 and a default value of 1.
+REQ-FDB-12: A CAPTCHA question is shown with a result input box.
+REQ-FDB-13:  The CAPTCHA result field shows the placeholder "Please enter the result of the CAPTCHA." when it is clicked while empty.
+REQ-FDB-14: The system displays "Please enter the result of the CAPTCHA." when an incorrect CAPTCHA result is submitted.
 REQ-FDB-15: The system displays "Thank you for your feedback." after a valid feedback is submitted.
 REQ-FDB-16: After a valid feedback is submitted, the form is reset and a new CAPTCHA question is shown.
 
@@ -237,6 +237,19 @@ REQ-ADD-10: A deleted address no longer appears in the address list during check
 REQ-ADD-11: A user sees only their own saved addresses.
 REQ-ADD-12: When the user has no saved addresses, the page shows "Add new address" button and an empty address list.
 
+My Payment Options
+REQ-PMT-01: Clicking "My Payment Options" opens the "My Payment Options" page.
+REQ-PMT-02: Each saved card shows the cardholder name, the card number with only the last 4 digits visible and the expiry date.
+REQ-PMT-03: A card saved during checkout appears in the list.
+REQ-PMT-04: The page has an expandable section for adding a new card.
+REQ-PMT-05: The form for adding a new card has the same fields as the payment form in checkout.
+REQ-PMT-06: The form for adding a new card applies the same validation messages and limits as in checkout (REQ-PAY-01 to REQ-PAY-07 and REQ-PAY-12).
+REQ-PMT-07: A new card saved from this page appears in the list.
+REQ-PMT-08: A saved card can be deleted and is removed from the list. 
+REQ-PMT-09: A deleted card can no longer appears in the payment methods list during checkout.
+REQ-PMT-10: A user sees only their own saved cards.
+REQ-PMT-11: When the user has no saved cards, the page shows "Add new card" expandable section and an empty payment options.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -250,7 +263,7 @@ Q-08: Searching for characters shows different products whose names and descript
 Q-09: Each review shows the author's email address to all visitors, including logged-out users. Is this intended?
 Q-10: Link Image accepts a URL typed by the user. Which URLs are intended to be accepted? (Security observation, to review in the security part of the project.)
 Q-11: Clicking Set with an empty username field removes the existing username with no message. Is this intended? (Defect candidate, REQ-PRF-05)
-Q-12: Clicking Upload Picture shows the raw response {"error":"File is not passed"} and no file chooser is available. (Defect candidate, REQ-PRF-07, REQ-PRF-09)
+Q-12: Clicking Upload Picture shows the raw response {"error": "File is not passed"} and no file chooser is available. (Defect candidate, REQ-PRF-07, REQ-PRF-09)
 Q-13: Submitting a valid image URL with Link Image does not change the profile picture. (Defect candidate, REQ-PRF-12)
 Q-14: Clicking Link Image with an empty field or with text that is not a URL leaves the profile picture area showing a picture that is not loaded, with no error message. (Defect candidate, REQ-PRF-13, REQ-PRF-14)
 Q-15: The tracking page does not show the delivery status ("In Transit") that is shown in Order History. Should it? (Question, REQ-ORH-06, REQ-ORH-07)
@@ -261,7 +274,7 @@ OBSERVATIONS
 - The password counter appears only after 5 characters are entered.
 - The same message, "Invalid email or password", is shown for an unregistered email and a wrong password. This does not reveal which emails exist.
 - The delivery option text shows "1 Days".
-The mobile number message reads "Mobile number must match 1000000-9999999999 format.", which reveals the accepted range as 7 to 10 digits.
+- The mobile number message reads "Mobile number must match 1000000-9999999999 format.", which reveals the accepted range as 7 to 10 digits.
 - An expired card cannot be tested, because no past year can be selected.
 - The feedback form masks the author's email as "***", but the reviews show the full author email to all visitors. The two features handle the same data differently. (See Q-09.)
 - When a file that is not a PDF is selected, no message is shown. The Submit button is disabled with no explanation.
