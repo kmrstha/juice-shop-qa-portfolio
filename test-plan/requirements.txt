@@ -286,6 +286,50 @@ REQ-LNG-05: The selected language is still applied after the page is reloaded.
 REQ-LNG-06: The selected language is still applied after the user logs out and logs in again.
 REQ-LNG-07: Product names and descriptions do not change when a language is selected.
 
+OTHER PAGES
+REQ-OTH-01: Clicking "About Us" opens a page showing company information.
+REQ-OTH-02: Clicking "Photo Wall" opens a page showing user photos.
+REQ-OTH-03: Clicking "Privacy Policy" opens a page showing the privacy policy text.
+REQ-OTH-04: A logged-in user can upload a photo on the "Photo Wall" page.
+REQ-OTH-05: A logged-out user cannot upload a photo on the "Photo Wall" page.
+REQ-OTH-06: Clicking "GitHub" opens the Juice Shop repository page in the same tab.
+
+DELUXE MEMBERSHIP
+REQ-DLX-01: Clicking "Deluxe Membership" opens the "Deluxe Membership" page.
+REQ-DLX-02: The page shows the membership price of 49¤ and the benefits of membership.
+REQ-DLX-03: The page offers two payment options: wallet and card.
+REQ-DLX-04: When a user pays the membership price, the user becomes a deluxe member and the page shows "You are already a deluxe member!".
+REQ-DLX-05: When the user pays with the wallet, 49¤ is deducted from the wallet balance.
+REQ-DLX-06: When the user pays with a saved card, the card is selected and the payment completes.
+REQ-DLX-07: A deluxe member sees discounted prices on Apple Juice (1000ml) and Lemon Juice (500ml).
+REQ-DLX-08: The system displays "You are already a deluxe member!" when a deluxe member opens the Deluxe Membership page.
+REQ-DLX-09: The Pay button is disabled when the wallet balance is less than 49¤.
+REQ-DLX-10: The deluxe membership is still active after the user logs out and logs in again.
+
+AI CHAT
+REQ-CHT-01: Clicking "AI Chat" opens a chat window with an input box and a send button.
+REQ-CHT-02: A message sent in the chat appears in the conversation.
+REQ-CHT-03: When the AI service is not configured or reachable, the chat displays "Oops! Looks like our AI brain is taking a juice break. The AI endpoint is not configured or reachable. Please talk to the shop administrator to get it back on track!"
+REQ-CHT-04: The chat window can be closed.
+
+HELP GETTING STARTED
+REQ-HLP-01: Clicking "Help Getting Started" starts a guided tour.
+REQ-HLP-02: The tour can be dismissed, and the user returns to the page they were on.
+
+RECYCLE
+REQ-RCY-01: Clicking "Recycle" opens the "Request Recycling Box" page, which shows the recycle request form.
+REQ-RCY-02: The Requestor field shows the user's email and cannot be edited.
+REQ-RCY-03: The form has the fields Requestor, Quantity and My Saved Address.
+REQ-RCY-04: The system displays "Please provide a quantity." when the Quantity field is left empty after being selected.
+REQ-RCY-05: The system displays "Quantity must be 10-1000 liters." when the quantity is below 10 or above 1000.
+REQ-RCY-06: A quantity from 10 to 1000 liters is accepted.
+REQ-RCY-07: The Submit button is disabled while the quantity is below 10 or above 1000.
+REQ-RCY-08: The My Saved Address field lists the addresses saved by the user.
+REQ-RCY-09: The Submit button is disabled until a valid quantity and a saved address are selected.
+REQ-RCY-10: The system displays "Thank you for using our eco-friendly recycling self-service. We will send you a pomace recycling box asap." after a valid request is submitted.
+REQ-RCY-11: After a valid request is submitted, the form is reset.
+REQ-RCY-12: When the user has no saved addresses, the My Saved Address field shows an empty list.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
