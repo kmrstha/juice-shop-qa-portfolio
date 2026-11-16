@@ -116,31 +116,52 @@ REQ-ORD-05: After an order is placed, the basket is empty.
 
 FORGOT PASSWORD
 REQ-FPW-01: Clicking "Forgot your password?" opens the "Forgot Password" page, which shows the Email, Security Question, New Password and Repeat New Password fields.
-REQ-FPW-02: The system displays "Please provide an email address." when the Email field in the forgot password form is left empty after being selected.
-REQ-FPW-03: When an email that is not registered is entered, Security Question, New Password and Repeat New Password fields and Change button are disabled.
-REQ-FPW-04: The system displays "Please provide an answer to your security question." when the Security Question field in the forgot password form is left empty after being selected.
-REQ-FPW-05: The system displays "Please provide your new password." when the New Password field in the forgot password form is left empty after being selected.
-REQ-FPW-06: The system displays "Please repeat your password." when the Repeat New Password field in the forgot password form is left empty after being selected.
+REQ-FPW-02: The system displays "Please provide an email address." when the Email field is left empty after being selected.
+REQ-FPW-03: When an email that is not registered is entered, the Security Question, New Password and Repeat New Password fields and the Change button are disabled.
+REQ-FPW-04: The system displays "Please provide an answer to your security question." when the Security Question field is left empty after being selected.
+REQ-FPW-05: The system displays "Please provide your new password." when the New Password field is left empty after being selected.
+REQ-FPW-06: The system displays "Please repeat your password." when the Repeat New Password field is left empty after being selected.
 REQ-FPW-07: After a registered email is entered, the Security Question field shows the question chosen at registration as its placeholder text.
-REQ-FPW-08: The system displays "Wrong answer to security question." when the answer to security question is wrong.
-REQ-FPW-09: The system displays "Your password was successfully changed." when the correct answer and matching valid new passwords are submitted.
+REQ-FPW-08: The system displays "Wrong answer to security question." after the Change button is clicked with a wrong answer.
+REQ-FPW-09: The Change button is disabled while any of the fields is empty.
 REQ-FPW-10: The New Password field is highlighted in red when fewer than 5 characters are entered.
-REQ-FPW-11: The system displays "Passwords do not match" when the New Password and Repeat New Password do not match.
-REQ-FPW-12: The New Password and Repeat New Password fields show a counter in the form "entered/limit", where the limit equals the maximum allowed length.
-REQ-FPW-13: The New Password field accepts 5 to 40 characters, the same length rule as the Password field in registration.
-REQ-FPW-14: After a successful change, the user can log in with the new password and cannot log in with the old one.
-REQ-FPW-15: The Forgot Password page offers a "Show password advice" toggle that lists the same password recommendations as the registration page.
-REQ-FPW-16: The password rules shown on the Forgot Password page match the rules the system enforces.
+REQ-FPW-11: The Change button is disabled while the New Password has fewer than 5 characters.
+REQ-FPW-12: The system displays "Passwords do not match" when the user leaves the Repeat New Password field with a value that differs from New Password. The Change button is disabled in this state.
+REQ-FPW-13: The system displays "Your password was successfully changed." when the correct answer and matching valid new passwords are submitted.
+REQ-FPW-14: After a successful change, the user can log in with the new password.
+REQ-FPW-15: After a successful change, logging in with the old password is rejected and the system displays "Invalid email or password."
+REQ-FPW-16: The New Password and Repeat New Password fields show a counter in the form "entered/40".
+REQ-FPW-17: The New Password field accepts 5 to 40 characters; characters typed after the 40th are not entered.
+REQ-FPW-18: The Forgot Password page offers a "Show password advice" toggle that lists the same password recommendations as the registration page.
+REQ-FPW-19: The password rules shown on the Forgot Password page match the rules the system enforces.
 
-SEARCG
-REQ-SRC-01: Clicking the magnifying glass icon opens the search box and pressing Enter runs the search.
+PRODUCT LIST AND DETAILS
+REQ-PRD-01: The home page shows the product list as cards, each with an image, a name and a price.
+REQ-PRD-02: The full product list contains 46 products.
+REQ-PRD-03: The product list shows 16 products per page by default.
+REQ-PRD-04: The items-per-page selector at the bottom of the list offers 16, 32 and 48.
+REQ-PRD-05: Selecting 32 shows 32 products on the first page.
+REQ-PRD-06: Selecting 48 shows all 46 products on one page.
+REQ-PRD-07: The page navigation arrows move between the pages of the list.
+REQ-PRD-08: With 16 products per page, the last page shows the remaining 14 products.
+REQ-PRD-09: Each product card has an "Add to basket" button.
+REQ-PRD-10: Clicking a product card opens a popup showing the product image, name, description and price.
+REQ-PRD-11: The product popup contains a Reviews section (see REQ-REV-01 to REQ-REV-16).
+REQ-PRD-12: The popup has a Close button and closing it returns to the product list.
+REQ-PRD-13: The popup closes when the user clicks outside it.
+
+SEARCH
+REQ-SRC-01: Clicking the magnifying glass icon opens the search box, and pressing Enter runs the search.
 REQ-SRC-02: When the full product name is entered, the matching product is displayed.
 REQ-SRC-03: A product whose name contains the entered text is displayed in the results.
 REQ-SRC-04: A product whose description contains the entered text is displayed in the results.
 REQ-SRC-05: The search is not case-sensitive.
 REQ-SRC-06: When the search box is empty and Enter is pressed, the whole product list is displayed.
-REQ-SRC-07: The system displays "No results found. Try adjusting your search to find what you're looking for." when no product name or description matches the entered text.
-REQ-SRC-08: When special characters are entered in the search box, the page shows full product list without errors.
+REQ-SRC-07: The system displays "No results found" followed by "Try adjusting your search to find what you're looking for." when no product name or description matches the entered text.
+REQ-SRC-08: When the character "%" is entered in the search box, the products whose name or description contains "%" are displayed.
+REQ-SRC-09: When the character "~" is entered in the search box, the "no results" message is displayed.
+REQ-SRC-10: When the character "<" or ">" is entered in the search box, 15 of the 46 products are displayed.
+REQ-SRC-11: Only products whose name or description contains the entered text are displayed.
 
 REVIEW
 REQ-REV-01: Opening a product shows the Reviews section with the review count.
@@ -209,8 +230,8 @@ REQ-PRF-09: Clicking Upload Picture with no file chosen shows a readable error m
 REQ-PRF-10: The profile picture is still shown after the user logs out and logs in again.
 REQ-PRF-11: The Link Image section provides a field for an image URL and a "Link Image" button.
 REQ-PRF-12: An image URL submitted with Link Image becomes the profile picture.
-REQ-PRF-13: When the Link Image field is empty and the button is clicked, the profile picture area shows a picture that is not loaded.
-REQ-PRF-14: When the Link Image field contains text that is not a URL and the button is clicked, the profile picture area shows a picture that is not loaded.
+REQ-PRF-13: When the Link Image field is empty and the button is clicked, the profile picture area shows no picture.
+REQ-PRF-14: When the Link Image field contains text that is not a URL and the button is clicked, the profile picture area shows no picture.
 REQ-PRF-15: When the Link Image field is empty or invalid, the system displays an error message and keeps the current profile picture.
 
 ORDER HISTORY
@@ -396,20 +417,17 @@ Q-03: Does the server reject a password longer than 40 characters when it is sen
 Q-04: The password counter shows "10/20" at 10 characters and "40/20" at 40. The limit shown (20) does not match the allowed maximum (40). The denominator never changes. (BUG-03, REQ-REG-18) Open point: [does the repeat password field show a counter and what limit does it show?]
 Q-05: After 6th consecutive failed logins, no lockout, delay or warning appeared. Is lockout or rate limiting intended? Without it, passwords can be guessed by repeated attempts. (Security observation, no requirement yet)
 Q-06: The Expiry Year field offers only years from 2080. A card expiring before 2080 cannot be entered. Is this range intended? (Potential defect, REQ-PAY-12)
-Q-07: The Forgot password fields show"/20" and accept any number of characters, registration stops at 40. Is the length rule intended to differ? (Potential defect, REQ-FPW-12, REQ-FPW-13)
+Q-07: The Forgot Password fields show "/20" and accept at least 200 characters, while registration stops at 40. Is the length rule intended to differ? (Potential defect, REQ-FPW-16, REQ-FPW-17)
 Q-08: Searching for characters shows different products whose names and descriptions do not contain it. Is this intended?
 Q-09: Each review shows the author's email address to all visitors, including logged-out users. Is this intended?
 Q-10: Link Image accepts a URL typed by the user. Which URLs are intended to be accepted? (Security observation, to review in the security part of the project.)
 Q-11: Clicking Set with an empty username field removes the existing username with no message. Is this intended? (Defect candidate, REQ-PRF-05)
-Q-12: Clicking Upload Picture shows the raw response {"error": "File is not passed"} and no file chooser is available. (Defect candidate, REQ-PRF-07, REQ-PRF-09)
-Q-13: Submitting a valid image URL with Link Image does not change the profile picture. (Defect candidate, REQ-PRF-12)
-Q-14: Clicking Link Image with an empty field or with text that is not a URL leaves the profile picture area showing a picture that is not loaded, with no error message. (Defect candidate, REQ-PRF-13, REQ-PRF-14)
-Q-15: The tracking page does not show the delivery status ("In Transit") that is shown in Order History. Should it? (Question, REQ-ORH-06, REQ-ORH-07)
-Q-16: The tracking page shows "Bonus Points Earned: 0". Is 0 expected for this order? (Question, REQ-ORH-11)
-Q-17: Change Password accepts a new password identical to the current password. Is this intended?
-Q-18: The Data Export page lists PDF and Excel, but neither can be selected. Is this intended? (Defect candidate, REQ-EXP-04)
-Q-19: The erasure form accepts any email address and any security answer, and the Delete User Data button is always enabled. Is verification of the email and answer intended? (Defect candidate, REQ-ERS-05, REQ-ERS-06)
-Q-20: After a valid erasure request, the user can still log in and see their data. When does the erasure happen? (Question, REQ-ERS-09, REQ-ERS-10)
+Q-12: The tracking page does not show the delivery status ("In Transit") that is shown in Order History. Should it? (Question, REQ-ORH-06, REQ-ORH-07)
+Q-13: The tracking page shows "Bonus Points Earned: 0". Is 0 expected for this order? (Question, REQ-ORH-11)
+Q-14: Change Password accepts a new password identical to the current password. Is this intended?
+Q-15: The Data Export page lists PDF and Excel, but neither can be selected. Is this intended? (Defect candidate, REQ-EXP-04)
+Q-16: The erasure form accepts any email address and any security answer, and the Delete User Data button is always enabled. Is verification of the email and answer intended? (Defect candidate, REQ-ERS-05, REQ-ERS-06)
+Q-17: After a valid erasure request, the user can still log in and see their data. When does the erasure happen? (Question, REQ-ERS-09, REQ-ERS-10)
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
@@ -429,4 +447,5 @@ OBSERVATIONS
 - With no saved addresses, the page shows only the "Add New Address" button and no message.
 - The Data Export page offers three formats: JSON, PDF and Excel.
 - The export opens in a new browser window instead of downloading a file.
-- Observation: This installation runs locally, so every login comes from the same local address. A change in the displayed IP between logins cannot be tested here.
+- This installation runs locally, so every login comes from the same local address. A change in the displayed IP between logins cannot be tested here.
+- Searching for "<" or ">" returns 15 of 46 products. Their descriptions contain links or italic text, which are stored with "<" and ">" characters that are not visible on the page.
