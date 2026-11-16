@@ -341,8 +341,20 @@ REQ-EXP-07: The text "(Your data export will open in a new Browser window.)" is 
 REQ-EXP-08: A valid export request in JSON format opens a new browser window containing the user's data.
 REQ-EXP-9: A valid export request in PDF format opens a new browser window containing the user's data.
 REQ-EXP-10: A valid export request in Excel format opens a new browser window containing the user's data.
-REQ-EXP-11: The exported data contains the user's account data: [fields you saw].
+REQ-EXP-11: The exported data contains the user's account data.
 REQ-EXP-12: The exported data matches the account data shown in the application.
+
+DATA ERASURE
+REQ-ERS-01: Clicking "Request Data Erasure" opens the "Data Erasure Request (Art. 17 GDPR)" page.
+REQ-ERS-02: The page shows the fields: Email Address, Security Question.
+REQ-ERS-03: The Security Question field shows the question set at registration as its placeholder.
+REQ-ERS-04: When a required field is left empty and "Delete User Data" is clicked, the browser displays "Please fill out this field".
+REQ-ERS-05: The system rejects an erasure request when the email address or the security answer does not match the logged-in account.
+REQ-ERS-06: The "Delete User Data" button is disabled until the required fields are filled.
+REQ-ERS-07: The system displays "Sorry to see you leave! Your erasure request will be processed shortly." after a valid erasure request is submitted.
+REQ-ERS-08: After a valid erasure request, the user is logged out.
+REQ-ERS-09: After the erasure request is processed, the user cannot log in with the erased account.
+REQ-ERS-10: After the erasure request is processed, the user's orders, addresses and saved cards are no longer shown.
 
 QUESTIONS AND POTENTIAL DEFECTS
 
@@ -363,6 +375,9 @@ Q-14: Clicking Link Image with an empty field or with text that is not a URL lea
 Q-15: The tracking page does not show the delivery status ("In Transit") that is shown in Order History. Should it? (Question, REQ-ORH-06, REQ-ORH-07)
 Q-16: The tracking page shows "Bonus Points Earned: 0". Is 0 expected for this order? (Question, REQ-ORH-11)
 Q-17: Change Password accepts a new password identical to the current password. Is this intended?
+Q-18: The Data Export page lists PDF and Excel, but neither can be selected. Is this intended? (Defect candidate, REQ-EXP-04)
+Q-19: The erasure form accepts any email address and any security answer, and the Delete User Data button is always enabled. Is verification of the email and answer intended? (Defect candidate, REQ-ERS-05, REQ-ERS-06)
+Q-20: After a valid erasure request, the user can still log in and see their data. When does the erasure happen? (Question, REQ-ERS-09, REQ-ERS-10)
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
