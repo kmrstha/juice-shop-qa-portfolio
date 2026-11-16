@@ -1,3 +1,4 @@
+REGISTRATION
 REQ-REG-01: A user can register by entering a valid email, password, repeated password, security question and answer.
 REQ-REG-02: The password and repeat password must match.
 REQ-REG-03: While the password is typed, the message "Password must be 5-40 characters long." is shown.
@@ -22,6 +23,7 @@ REQ-REG-16: The security answer is required to register.
 REQ-REG-17: Characters typed in the password and repeat password fields are masked.
 REQ-REG-18: The Password field shows a character counter in the form "entered/limit", where the limit equals the maximum allowed length of 40.
 
+LOGIN
 REQ-LOG-01: A registered user who enters the correct email and password is logged in.
 REQ-LOG-02: The system displays "Invalid email or password" when the email is not registered.
 REQ-LOG-03: The system displays error message "Invalid email or password" when the password does not match.
@@ -40,6 +42,7 @@ REQ-LOG-15: After logout, the user is redirected to the home page and the accoun
 REQ-LOG-16: Clicking "Forgot your password?" link opens the Forgot Password page.
 REQ-LOG-17: Clicking "Not yet a customer?" directs to user registration page.
 
+BASKET
 REQ-BAS-01: Clicking "Add to basket" displays the message "Placed (product name) into basket."
 REQ-BAS-02: Clicking on "Add to basket" again on the same product displays the message "Added another (product name) to basket."
 REQ-BAS-03: Clicking "Your basket" opens the Your Basket page, which lists each added product with its name, quantity and price.
@@ -53,7 +56,7 @@ REQ-BAS-10: The total price updates when a quantity is changed or a product is r
 REQ-BAS-11: After the user logs out and logs in again, the basket still contains the same products and quantities.
 REQ-BAS-12: Adding the same product again increases its quantity in the existing row and does not create a second row.
 REQ-BAS-13: The basket icon shows the total quantity of items in the basket.
-REQ-BAS-14: The checkout button is disabled when the basket is empty.
+REQ-BAS-14: The Checkout button is disabled when the basket is empty.
 REQ-BAS-15: When the basket is empty, the Your Basket page shows a total of 0 and an empty list.
 REQ-BAS-16: Clicking "Add to basket" on a product that is already at a quantity of 5 does not raise its quantity above 5 and displays message "You can order only up to 5 items of this product."
 
@@ -92,7 +95,7 @@ REQ-PAY-04: The system displays "Please enter an expiry year." when the Expiry Y
 REQ-PAY-05: The card number field accepts digits only.
 REQ-PAY-06: The system displays "Please enter a valid sixteen digit card number." when the user leaves the Card Number field after entering a number that is not 16 digits long.
 REQ-PAY-07: The Submit button stays disabled while the Card Number field is invalid.
-REQ-PAY-08: When the Submit button is clicked, the last 4 digits of the card, the name and the expiry month and years are saved.
+REQ-PAY-08: When the Submit button is clicked, the last 4 digits of the card, the name and the expiry month and year are saved.
 REQ-PAY-09: The saved card is shown at the top of the payment methods list on the "My Payment Options" page.
 REQ-PAY-10: The payment step offers these other options: Donations and Merchandise.
 REQ-PAY-11: The Continue button is disabled until a payment option is selected.
@@ -105,15 +108,16 @@ REQ-CPN-03: The system displays "Invalid coupon." when the coupon is invalid.
 REQ-CPN-04: The system displays "Your discount of 10% will be applied during checkout." when the redeem code is accepted.
 
 ORDER 
-REQ-ORD-01: Clicking Continue opens the "Order Summary" page, which shows the delivery address, payment method and basket (product, quantity, price). 
+REQ-ORD-01: Clicking Continue opens the "Order Summary" page, which shows the delivery address, payment method and basket (product, quantity, price).
 REQ-ORD-02: The order total equals the product total, minus the coupon discount on the product total, plus the delivery cost.
 REQ-ORD-03: Clicking "Place your order and pay" opens the "Order Completion" page.
 REQ-ORD-04: A placed order appears in Order History with an order ID.
 REQ-ORD-05: After an order is placed, the basket is empty.
 
+FORGOT PASSWORD
 REQ-FPW-01: Clicking "Forgot your password?" opens the "Forgot Password" page, which shows the Email, Security Question, New Password and Repeat New Password fields.
 REQ-FPW-02: The system displays "Please provide an email address." when the Email field in the forgot password form is left empty after being selected.
-REQ-FPW-03: When an email that is not registered is entered, Security Question, New Password, Repeat New Password and Change button fields are disabled.
+REQ-FPW-03: When an email that is not registered is entered, Security Question, New Password and Repeat New Password fields and Change button are disabled.
 REQ-FPW-04: The system displays "Please provide an answer to your security question." when the Security Question field in the forgot password form is left empty after being selected.
 REQ-FPW-05: The system displays "Please provide your new password." when the New Password field in the forgot password form is left empty after being selected.
 REQ-FPW-06: The system displays "Please repeat your password." when the Repeat New Password field in the forgot password form is left empty after being selected.
@@ -128,6 +132,7 @@ REQ-FPW-14: After a successful change, the user can log in with the new password
 REQ-FPW-15: The Forgot Password page offers a "Show password advice" toggle that lists the same password recommendations as the registration page.
 REQ-FPW-16: The password rules shown on the Forgot Password page match the rules the system enforces.
 
+SEARCG
 REQ-SRC-01: Clicking the magnifying glass icon opens the search box and pressing Enter runs the search.
 REQ-SRC-02: When the full product name is entered, the matching product is displayed.
 REQ-SRC-03: A product whose name contains the entered text is displayed in the results.
@@ -137,6 +142,7 @@ REQ-SRC-06: When the search box is empty and Enter is pressed, the whole product
 REQ-SRC-07: The system displays "No results found. Try adjusting your search to find what you're looking for." when no product name or description matches the entered text.
 REQ-SRC-08: When special characters are entered in the search box, the page shows full product list without errors.
 
+REVIEW
 REQ-REV-01: Opening a product shows the Reviews section with the review count.
 REQ-REV-02: A logged-in user sees a review input box in the Reviews section.
 REQ-REV-03: When a review is submitted, the text is removed from the input box.
@@ -154,7 +160,8 @@ REQ-REV-14: The text "Max. 160 characters" is shown below the review input box.
 REQ-REV-15: When the user is logged out, the review count, the reviews and the thumbs up button are shown and the review input box is not shown.
 REQ-REV-16: A product with no reviews shows a review count of 0.
 
-REQ-FDB-01: Clicking "Customer Feedback" in the side menu opens Customer Feedback form.
+CUSTOMER FEEDBACK
+REQ-FDB-01: Clicking "Customer Feedback" in the side menu opens the Customer Feedback form.
 REQ-FDB-02: When the user is logged in, the Author field shows "***" and cannot be edited.
 REQ-FDB-03: When the user is logged out, the Customer Feedback form is available and the Author field shows "anonymous".
 REQ-FDB-04: The Submit button is disabled until a comment and a CAPTCHA result are entered.
@@ -166,11 +173,12 @@ REQ-FDB-09: The text "Max. 160 characters" is shown below the comment field.
 REQ-FDB-10: A character counter is shown for the Comment field in the form "entered/160".
 REQ-FDB-11: The rating control is a slider with a range of 1 to 5 and a default value of 1.
 REQ-FDB-12: A CAPTCHA question is shown with a result input box.
-REQ-FDB-13:  The CAPTCHA result field shows the placeholder "Please enter the result of the CAPTCHA." when it is clicked while empty.
+REQ-FDB-13: The CAPTCHA result field shows the placeholder "Please enter the result of the CAPTCHA." when it is clicked while empty.
 REQ-FDB-14: The system displays "Please enter the result of the CAPTCHA." when an incorrect CAPTCHA result is submitted.
 REQ-FDB-15: The system displays "Thank you for your feedback." after a valid feedback is submitted.
 REQ-FDB-16: After a valid feedback is submitted, the form is reset and a new CAPTCHA question is shown.
 
+COMPLAINT
 REQ-CMP-01: Clicking "Complaint" in the side menu opens the Complaint form.
 REQ-CMP-02: The customer email field is pre-filled and cannot be edited.
 REQ-CMP-03: The Submit button is disabled until a message is entered.
@@ -188,6 +196,7 @@ REQ-CMP-14: The system displays "Customer support will get in touch with you soo
 REQ-CMP-15: After a valid complaint is submitted, the form is reset.
 REQ-CMP-16: Each submitted complaint receives a different reference number.
 
+PROFILE
 REQ-PRF-01: Clicking the user's email in the Account menu opens the "[exact page title]" page.
 REQ-PRF-02: The Email field is pre-filled with the user's email and cannot be edited.
 REQ-PRF-03: The Role field is pre-filled with "customer" and cannot be edited.
@@ -223,9 +232,9 @@ REQ-ORH-15: The total price on the confirmation equals the sum of the product pr
 REQ-ORH-16: The products and quantities on the confirmation match the order in the Order History list.
 REQ-ORH-17: When the user has no orders, the Order History page shows "No results found. You have not placed any orders yet."
 
-My Saved Addresses
+MY SAVED ADDRESS
 REQ-ADD-01: Clicking "My Saved Addresses" opens the "My saved addresses" page.
-REQ-ADD-02: Each saved address shows its name, address and country. 
+REQ-ADD-02: Each saved address shows its name, address and country.
 REQ-ADD-03: An address added during checkout appears in the saved addresses list.
 REQ-ADD-04: The "Add New Address" button opens the address form.
 REQ-ADD-05: The address form on this page has the same required fields as the address form in checkout.
@@ -235,9 +244,9 @@ REQ-ADD-08: A saved address can be edited and the changes are shown in the list.
 REQ-ADD-09: A saved address can be deleted and is removed from the list.
 REQ-ADD-10: A deleted address no longer appears in the address list during checkout.
 REQ-ADD-11: A user sees only their own saved addresses.
-REQ-ADD-12: When the user has no saved addresses, the page shows "Add new address" button and an empty address list.
+REQ-ADD-12: When the user has no saved addresses, the page shows "Add New Address" button and an empty address list.
 
-My Payment Options
+MY PAYMENT OPTIONS
 REQ-PMT-01: Clicking "My Payment Options" opens the "My Payment Options" page.
 REQ-PMT-02: Each saved card shows the cardholder name, the card number with only the last 4 digits visible and the expiry date.
 REQ-PMT-03: A card saved during checkout appears in the list.
@@ -245,11 +254,12 @@ REQ-PMT-04: The page has an expandable section for adding a new card.
 REQ-PMT-05: The form for adding a new card has the same fields as the payment form in checkout.
 REQ-PMT-06: The form for adding a new card applies the same validation messages and limits as in checkout (REQ-PAY-01 to REQ-PAY-07 and REQ-PAY-12).
 REQ-PMT-07: A new card saved from this page appears in the list.
-REQ-PMT-08: A saved card can be deleted and is removed from the list. 
-REQ-PMT-09: A deleted card can no longer appears in the payment methods list during checkout.
+REQ-PMT-08: A saved card can be deleted and is removed from the list.
+REQ-PMT-09: A deleted card no longer appears in the payment methods list during checkout.
 REQ-PMT-10: A user sees only their own saved cards.
-REQ-PMT-11: When the user has no saved cards, the page shows "Add new card" expandable section and an empty payment options.
+REQ-PMT-11: When the user has no saved cards, the page shows the "Add new card" expandable section and an empty list.
 
+DIGITAL WALLET
 REQ-WAL-01: Clicking "Digital Wallet" opens the "Digital Wallet" page.
 REQ-WAL-02: The page shows the wallet balance. 
 REQ-WAL-03: The wallet balance of a new account is 0.
@@ -264,7 +274,7 @@ REQ-WAL-11: Selecting a payment option and clicking "Continue" opens the Digital
 REQ-WAL-12: After money is added, the balance increases by the amount deposited.
 REQ-WAL-13: The wallet balance is still shown correctly after the page is reloaded.
 
-Change Password
+CHANGE PASSWORD
 REQ-CHP-01: Clicking "Change Password" opens the "Change Password" page, which shows the Current Password, New Password and Repeat New Password fields.
 REQ-CHP-02: The Change button is disabled until all three fields are filled.
 REQ-CHP-03: The system displays "Please provide your current password." when the Current Password field is left empty after being selected.
@@ -275,9 +285,9 @@ REQ-CHP-07: After a successful change, the user can log in with the new password
 REQ-CHP-08: The message "Password must be 5-40 characters long." is shown below the New Password field.
 REQ-CHP-09: The New Password field accepts 5 to 40 characters and does not accept a password outside that range.
 REQ-CHP-10: A character counter is shown for the New Password field in the form "entered/40".
-REQ-CHP-11 The password rules shown to the user match the rules the system enforces.
+REQ-CHP-11: The password rules shown to the user match the rules the system enforces.
 
-Language Selector
+LANGUAGE SELECTOR
 REQ-LNG-01: Clicking the language icon in the top bar opens a list of available languages.
 REQ-LNG-02: The language list offers 43 languages.
 REQ-LNG-03: The default language of the application is English.
@@ -339,7 +349,7 @@ REQ-EXP-05: The Request button is disabled until an export format is selected an
 REQ-EXP-06: The system displays "Wrong answer to CAPTCHA. Please try again." when an incorrect CAPTCHA answer is submitted.
 REQ-EXP-07: The text "(Your data export will open in a new Browser window.)" is shown below the Request button.
 REQ-EXP-08: A valid export request in JSON format opens a new browser window containing the user's data.
-REQ-EXP-9: A valid export request in PDF format opens a new browser window containing the user's data.
+REQ-EXP-09: A valid export request in PDF format opens a new browser window containing the user's data.
 REQ-EXP-10: A valid export request in Excel format opens a new browser window containing the user's data.
 REQ-EXP-11: The exported data contains the user's account data.
 REQ-EXP-12: The exported data matches the account data shown in the application.
