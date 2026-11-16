@@ -330,6 +330,20 @@ REQ-RCY-10: The system displays "Thank you for using our eco-friendly recycling 
 REQ-RCY-11: After a valid request is submitted, the form is reset.
 REQ-RCY-12: When the user has no saved addresses, the My Saved Address field shows an empty list.
 
+DATA EXPORT
+REQ-EXP-01: Clicking "Request Data Export" opens the "Request Data Export" page.
+REQ-EXP-02: The page lists three export formats: JSON, PDF and Excel.
+REQ-EXP-03: The JSON, PDF and Excel formats can be selected.
+REQ-EXP-04: The page shows a CAPTCHA question with an answer field.
+REQ-EXP-05: The Request button is disabled until an export format is selected and a CAPTCHA answer is entered.
+REQ-EXP-06: The system displays "Wrong answer to CAPTCHA. Please try again." when an incorrect CAPTCHA answer is submitted.
+REQ-EXP-07: The text "(Your data export will open in a new Browser window.)" is shown below the Request button.
+REQ-EXP-08: A valid export request in JSON format opens a new browser window containing the user's data.
+REQ-EXP-9: A valid export request in PDF format opens a new browser window containing the user's data.
+REQ-EXP-10: A valid export request in Excel format opens a new browser window containing the user's data.
+REQ-EXP-11: The exported data contains the user's account data: [fields you saw].
+REQ-EXP-12: The exported data matches the account data shown in the application.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -366,3 +380,5 @@ OBSERVATIONS
 - The order confirmation shows the customer's full email address.
 - Deleting a saved address happens immediately, with no confirmation prompt.
 - With no saved addresses, the page shows only the "Add New Address" button and no message.
+- The Data Export page offers three formats: JSON, PDF and Excel.
+- The export opens in a new browser window instead of downloading a file.
