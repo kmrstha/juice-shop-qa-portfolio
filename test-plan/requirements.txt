@@ -372,6 +372,12 @@ REQ-2FA-12: The system displays "Failed to change 2FA setup. Check if you entere
 REQ-2FA-13: Entering the correct current password in the "Remove 2FA from your account" section and clicking the remove button disables 2FA, and the page shows a QR code, a Current Password field and an Initial Token field.
 REQ-2FA-14: After 2FA is disabled, logging in needs only the email and password.
 
+LAST LOGIN IP
+REQ-LIP-01: Clicking "Last Login IP" opens the "Last Login IP" page.
+REQ-LIP-02: The page shows the IP address recorded at the user's previous login, in the form of an IPv4 address (four numbers separated by dots).
+REQ-LIP-03: After the user logs out and logs in again, the IP address shown is the one recorded at the previous login.
+REQ-LIP-04: The page shows only the IP address of the logged-in user's own account.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
@@ -413,3 +419,4 @@ OBSERVATIONS
 - With no saved addresses, the page shows only the "Add New Address" button and no message.
 - The Data Export page offers three formats: JSON, PDF and Excel.
 - The export opens in a new browser window instead of downloading a file.
+- Observation: This installation runs locally, so every login comes from the same local address. A change in the displayed IP between logins cannot be tested here.
