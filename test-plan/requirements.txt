@@ -356,6 +356,22 @@ REQ-ERS-08: After a valid erasure request, the user is logged out.
 REQ-ERS-09: After the erasure request is processed, the user cannot log in with the erased account.
 REQ-ERS-10: After the erasure request is processed, the user's orders, addresses and saved cards are no longer shown.
 
+TWO-FACTOR AUTHENTICATION
+REQ-2FA-01: Clicking "2FA Configuration" opens the "2FA Configuration" page.
+REQ-2FA-02: The page shows a QR code, a Current Password field and an Initial Token field.
+REQ-2FA-03: A character counter is shown for the Initial Token field in the form "entered/6".
+REQ-2FA-04: The Initial Token field accepts up to 6 characters; characters typed after the 6th are not entered.
+REQ-2FA-05: The Current Password and Initial Token fields are highlighted in red when left empty after being selected.
+REQ-2FA-06: The system displays "Failed to change 2FA setup. Check if you entered your password (and token) correctly." when the current password entered is wrong.
+REQ-2FA-07: The system displays "The token appears to be invalid." when an incorrect initial token is entered.
+REQ-2FA-08: When a correct current password and a valid token from an authenticator app are entered, 2FA is enabled and the page shows "Remove 2FA from your account" with a Current Password field and a remove button.
+REQ-2FA-09: After 2FA is enabled, logging in with the correct email and password asks for a token in a second step.
+REQ-2FA-10: The system displays "The token appears to be invalid." when an incorrect token is entered at login.
+REQ-2FA-11: A correct token entered at login completes the login.
+REQ-2FA-12: The system displays "Failed to change 2FA setup. Check if you entered your password (and token) correctly." when the wrong current password is entered in the "Remove 2FA from your account" section.
+REQ-2FA-13: Entering the correct current password in the "Remove 2FA from your account" section and clicking the remove button disables 2FA, and the page shows a QR code, a Current Password field and an Initial Token field.
+REQ-2FA-14: After 2FA is disabled, logging in needs only the email and password.
+
 QUESTIONS AND POTENTIAL DEFECTS
 
 Q-01: The password advice lists five rules but "12345" and "abcdefgh" are accepted, so none of the advice is enforced. Which is intended: the advice, the 5-40 character message or both? (BUG-01, REQ-REG-12)
