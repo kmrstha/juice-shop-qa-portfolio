@@ -171,7 +171,7 @@ REQ-REV-04: When a review is submitted, the review count increases by 1 and the 
 REQ-REV-05: A submitted review is still shown after the page is reloaded.
 REQ-REV-06: The author's email address is displayed with each review.
 REQ-REV-07: A thumbs up button and its count are shown at the end of each review.
-REQ-REV-08: Clicking the thumbs up button increases its count by 1.
+REQ-REV-08: When a logged-in user clicks the thumbs up button, its count increases by 1.
 REQ-REV-09: The thumbs up button of a review cannot be clicked a second time by the same user.
 REQ-REV-10: The Submit button is disabled until a review is written.
 REQ-REV-11: The Submit button is disabled when the review contains only spaces.
@@ -180,6 +180,8 @@ REQ-REV-13: A character counter is shown for the review input box in the form "e
 REQ-REV-14: The text "Max. 160 characters" is shown below the review input box.
 REQ-REV-15: When the user is logged out, the review count, the reviews and the thumbs up button are shown and the review input box is not shown.
 REQ-REV-16: A product with no reviews shows a review count of 0.
+REQ-REV-17: A logged-out user cannot like a review: clicking the thumbs up button does not change its count.
+REQ-REV-18: When a logged-out user clicks the thumbs up button, no message is shown.
 
 CUSTOMER FEEDBACK
 REQ-FDB-01: Clicking "Customer Feedback" in the side menu opens the Customer Feedback form.
@@ -449,3 +451,4 @@ OBSERVATIONS
 - The export opens in a new browser window instead of downloading a file.
 - This installation runs locally, so every login comes from the same local address. A change in the displayed IP between logins cannot be tested here.
 - Searching for "<" or ">" returns 15 of 46 products. Their descriptions contain links or italic text, which are stored with "<" and ">" characters that are not visible on the page.
+- A logged-out user can see the thumbs up button, but clicking it does nothing and no message explains why.
