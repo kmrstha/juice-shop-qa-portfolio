@@ -22,6 +22,7 @@ REQ-REG-15: The security question dropdown offers a list of questions and one mu
 REQ-REG-16: The security answer is required to register.
 REQ-REG-17: Characters typed in the password and repeat password fields are masked.
 REQ-REG-18: The Password field shows a character counter in the form "entered/limit", where the limit equals the maximum allowed length of 40.
+REQ-REG-19: The Repeat Password field shows a character counter in the form "entered/40".
 
 LOGIN
 REQ-LOG-01: A registered user who enters the correct email and password is logged in.
@@ -218,9 +219,12 @@ REQ-CMP-13: The system displays "File too large. Maximum 100 KB allowed." when t
 REQ-CMP-14: The system displays "Customer support will get in touch with you soon! Your complaint reference is #[number]" after a valid complaint is submitted.
 REQ-CMP-15: After a valid complaint is submitted, the form is reset.
 REQ-CMP-16: Each submitted complaint receives a different reference number.
+REQ-CMP-17: The Submit button is disabled when the message contains only spaces.
+REQ-CMP-18: The invoice file upload is optional: a complaint with a message and no file can be submitted.
+REQ-CMP-19: The Complaint form is available only to a logged-in user.
 
 PROFILE
-REQ-PRF-01: Clicking the user's email in the Account menu opens the "[exact page title]" page.
+REQ-PRF-01: Clicking the user's email in the Account menu opens the "User Profile" page.
 REQ-PRF-02: The Email field is pre-filled with the user's email and cannot be edited.
 REQ-PRF-03: The Role field is pre-filled with "customer" and cannot be edited.
 REQ-PRF-04: When a username is entered and Set is clicked, the username is shown below the profile picture.
@@ -430,6 +434,7 @@ Q-14: Change Password accepts a new password identical to the current password. 
 Q-15: The Data Export page lists PDF and Excel, but neither can be selected. Is this intended? (Defect candidate, REQ-EXP-04)
 Q-16: The erasure form accepts any email address and any security answer, and the Delete User Data button is always enabled. Is verification of the email and answer intended? (Defect candidate, REQ-ERS-05, REQ-ERS-06)
 Q-17: After a valid erasure request, the user can still log in and see their data. When does the erasure happen? (Question, REQ-ERS-09, REQ-ERS-10)
+Q-21: The Complaint form's Submit button is enabled for a message of only spaces, unlike the Reviews and Feedback forms. (Defect candidate, REQ-CMP-17)
 
 OBSERVATIONS
 - The password advice says "lower character" and "upper character" instead of "lowercase letter" and "uppercase letter".
