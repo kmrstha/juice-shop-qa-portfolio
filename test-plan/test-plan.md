@@ -101,3 +101,54 @@ Totals: 13 High, 6 Medium, 6 Low.
 | Public repository | Personal data could be exposed | Use test emails only; blur emails, IP addresses and 2FA secrets in evidence; do not commit exports |
 | Single tester | No independent review | Peer review of the plan and test cases if possible |
 | Data-dependent results | Numbers such as 46 products may change | Record the data state at the start of each run |
+
+## 3. Test Approach
+
+### 3.1 Test types
+| Type | Purpose |
+| --- | --- |
+| Functional | Each requirement behaves as written |
+| Negative | Invalid input and wrong actions are handled |
+| Boundary | The edges of every limit are tested |
+| Validation messages | The exact message text and its trigger |
+| End-to-end flow | A full journey across features, for example register, log in, add to basket, check out, then find the order in Order History |
+| Exploratory | Time-boxed free testing around High-risk features |
+| Compatibility (quick) | The Edge flows listed in the Scope section |
+
+### 3.2 Design techniques
+- Boundary value analysis for limits: password 4/5/40/41 characters, review 160, complaint 4096, quantity 9/10/1000/1001, mobile number 6/7/10/11 digits, basket quantity 5/6
+- Equivalence partitioning: one valid and one invalid class per input, so similar inputs are not repeated
+- Decision table: order total from quantity, delivery option and coupon
+- State transition: 2FA (off, on, off), Deluxe Membership, login and logout
+- Error guessing: during the exploratory sessions
+
+### 3.3 Test case design: one case per behavior
+A test case covers one behavior. Requirements that describe the same behavior are grouped into one case, and the case lists every requirement ID it covers.
+
+Grouping rules:
+- Group requirements with the same trigger and the same kind of result. Example: the "left empty after being selected" messages of one form are one case, with each field's result recorded.
+- Do not group a requirement that fails or is suspected to fail (REQ-REG-12, REQ-REG-18, REQ-REG-07 and similar). Each gets its own case, so the failure is isolated and one bug maps to one case.
+- Do not group across features.
+- High-priority features are grouped less aggressively than Medium and Low ones.
+- Every requirement is covered by at least one case. A traceability matrix proves this.
+
+Estimated size: about 200 to 230 test cases for 349 requirements. The exact number is set when the cases are written.
+
+### 3.4 Coverage by priority
+| Priority | Coverage |
+| --- | --- |
+| High | Positive, negative and boundary cases; one end-to-end flow where it applies; one exploratory session |
+| Medium | Positive cases and the main negative case for each behavior |
+| Low | A short pass over the main behavior |
+
+### 3.5 Test case format
+Each test case is a row in a spreadsheet with: ID (TC-REG-01), requirement IDs covered, priority, preconditions, steps, test data, expected result, actual result, status (Pass, Fail, Blocked, Not Tested), bug ID, browser and run date.
+
+### 3.6 Exploratory testing
+One session of 30 to 45 minutes for each High-priority feature, with a written charter (for example: "Explore the Registration form with unusual inputs to find validation gaps"). Each session records its notes, any new questions, and any behavior the requirements missed. New findings are logged as questions or bugs, and requirements change only through the baseline change log.
+
+### 3.7 Automation
+Not part of this plan. Automating 10 to 15 High-priority cases is a separate later project.
+
+### 3.8 Defect handling
+A mismatch between a requirement and the application is logged as a bug in `bug-reports/`, with steps, expected and actual results, severity, and evidence. Where the intended behavior is unclear, the finding is recorded as a question and is not called a defect.
