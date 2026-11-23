@@ -152,3 +152,67 @@ Not part of this plan. Automating 10 to 15 High-priority cases is a separate lat
 
 ### 3.8 Defect handling
 A mismatch between a requirement and the application is logged as a bug in `bug-reports/`, with steps, expected and actual results, severity, and evidence. Where the intended behavior is unclear, the finding is recorded as a question and is not called a defect.
+
+## 4. Test Environment and Test Data
+
+### 4.1 Application under test
+| Item | Value |
+| --- | --- |
+| Application | OWASP Juice Shop v20.3.0 |
+| Source | https://github.com/juice-shop/juice-shop/releases/tag/v20.3.0 |
+| Installation | Local release package |
+| Started with | npm start |
+| URL | http://localhost:3000 |
+| Default language | English |
+| Data state at start | 46 products, 16 products per page by default, wallet balance of a new account 0 |
+
+### 4.2 Test machine
+| Item | Value |
+| --- | --- |
+| Operating system | Windows 11, version 25H2 (OS build 26200.9974) |
+| Node.js | v26.13.1 |
+| Screen resolution | 1920 x 1080 |
+| Browser zoom | 100% |
+| Internet access | Available during tests. Needed for Link Image (loads a picture from a web address) and the GitHub link in the side menu |
+
+### 4.3 Browsers
+| Browser | Version | Use |
+| --- | --- | --- |
+| Google Chrome | 157.0.8103.79 | Main browser, all test cases |
+| Microsoft Edge | 157.0.4341.60 | Quick compatibility check of the critical flows (see 1.4) |
+
+### 4.4 Test accounts
+| Role | Email | Used for |
+| --- | --- | --- |
+| Main account | qa.main@example.com | Login, basket, checkout, orders, profile |
+| Second account | qa.second@example.com | Cross-user checks: REQ-ORH-05, REQ-ADD-11, REQ-PMT-10, REQ-LIP-04 |
+| Empty account | qa.empty@example.com | A new account with no orders, addresses or cards: REQ-ORH-17, REQ-ADD-12, REQ-PMT-11, REQ-RCY-12 |
+| 2FA account | qa.fa@example.com | 2FA tests only |
+| Erasure account | qa.erasure@example.com | Data Erasure tests only, run last |
+| Deluxe account | qa.deluxe@example.com | Deluxe Membership tests only, because it cannot be undone |
+
+Accounts use made-up email addresses. Passwords are not recorded in this repository. Accounts are recreated after each application restart (see 4.6), and their creation dates are kept in the test data log.
+
+### 4.5 Test data
+| Data | Value |
+| --- | --- |
+| Test card | A fake 16-digit card number with a name and an expiry year of 2080 or later (the earliest year offered) |
+| Coupon | One valid 10-character coupon code giving a 10% discount, taken from a public Reddit post. The code is kept in private notes. Last checked on 2026-11-23: accepted |
+| Address | One complete test address with a 7 to 10 digit mobile number |
+| Complaint files | A PDF under 100 KB, a PDF over 100 KB, and one file that is not a PDF |
+| Profile files | A small PNG and a small JPG |
+| Image URL for Link Image | https://images.pexels.com/photos/40483057/pexels-photo-40483057.jpeg (direct link to a public image) |
+| Wallet | A new account starts at 0. 100 is added by deposit with the test card before the wallet tests |
+
+No real personal data, real card numbers or real email addresses are used. The coupon is checked at the start of each run, and its result is recorded in the test data log.
+
+### 4.6 Data reset
+The application data resets when it is restarted, including all accounts, orders, addresses, cards and the wallet balance. Test accounts must be recreated after each restart. Each test run starts by recording the data state: product count, wallet balance and accounts created. The application is not restarted during a test run.
+
+### 4.7 Known environment limits
+- The AI service is not configured, so chatbot replies cannot be tested
+- All logins come from the same local address, so a change in the Last Login IP cannot be tested
+- The Expiry Year dropdown starts at 2080, so an expired card cannot be tested
+- The Upload Picture section offers no file chooser (see BUG-04)
+- Link Image does not set the picture from a valid URL (see BUG-05)
+- The Data Export page offers PDF and Excel but they cannot be selected (Q-15)
