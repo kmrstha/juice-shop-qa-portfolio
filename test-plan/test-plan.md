@@ -216,3 +216,41 @@ The application data resets when it is restarted, including all accounts, orders
 - The Upload Picture section offers no file chooser (see BUG-04)
 - Link Image does not set the picture from a valid URL (see BUG-05)
 - The Data Export page offers PDF and Excel but they cannot be selected (Q-15)
+
+## 5. Entry and Exit Criteria
+
+### 5.1 Entry criteria
+Test execution starts when all of these are true:
+- Requirements baseline v1.0 is frozen and tagged (requirements-v1.0)
+- This test plan is saved in the repository
+- The test case sheet and the traceability matrix exist
+- OWASP Juice Shop v20.3.0 runs at http://localhost:3000
+- The test accounts and test data from section 4 are created for this run (accounts are recreated after each restart)
+- The coupon has been checked and its result recorded in the test data log
+- Chrome and Edge are available at the versions in section 4.3
+- The data state at the start of the run (products, wallet balance, accounts) is recorded in the test data log
+
+### 5.2 Exit criteria
+Testing is complete when all of these are true:
+- Every High-priority test case has been executed
+- Every Medium and Low test case has been executed or marked Blocked with a reason
+- Every requirement is covered by at least one test case, shown by the traceability matrix
+- Every failed test case has a bug report, or a question where the intended behavior is unclear
+- Every bug report has steps, expected and actual results, severity and evidence
+- The Edge compatibility check of the critical flows is complete
+- The test summary report is written
+
+No pass-rate target is set. The application contains deliberate defects, so a pass rate would not show whether the testing was done well. Completion is measured by coverage, execution and reporting.
+
+### 5.3 Suspension criteria
+Testing stops until the cause is resolved when:
+- The application does not start, or crashes repeatedly
+- Login fails for every account
+- The data is corrupted and results cannot be trusted
+- The application is restarted in the middle of a run (accounts and data are lost)
+
+### 5.4 Resumption criteria
+Testing resumes when:
+- The application runs again, and a quick check of login, basket and checkout passes
+- The test accounts and test data are recreated and recorded in the test data log
+- The interrupted test cases are re-run from their preconditions
