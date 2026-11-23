@@ -254,3 +254,52 @@ Testing resumes when:
 - The application runs again, and a quick check of login, basket and checkout passes
 - The test accounts and test data are recreated and recorded in the test data log
 - The interrupted test cases are re-run from their preconditions
+
+## 6. Effort and Schedule
+
+### 6.1 Assumptions
+- Available time: 25 hours per week
+- Start date: 2026-11-24 (test case writing)
+- No fixed deadline. The schedule shows the estimated duration.
+- About 215 test cases (estimate range 200 to 230): about 140 High, 55 Medium and 20 Low
+- Writing time per case: about 20 minutes for High, 10 for Medium, 8 for Low
+- Execution time per case: about 6 minutes for High (including evidence), 5 for Medium, 3 for Low
+- Exploratory testing: 13 High-priority features, about 45 minutes each plus notes
+- About 15 bug reports at about 25 minutes each, including evidence
+- Contingency of 15% for reruns, restarts and unclear requirements
+- The application data resets on restart (see 4.6), so each run needs account setup
+
+### 6.2 Effort estimate
+| Activity | Hours |
+| --- | --- |
+| Write test cases (about 215) | 45 |
+| Traceability matrix (349 requirements) | 4 |
+| Review of test cases (after a gap of at least one day) | 4 |
+| Environment and account setup (3 runs) | 3 |
+| Test execution in Chrome, Edge check and retests | 26 |
+| Exploratory sessions | 10 |
+| Bug reports with evidence | 6 |
+| Test summary report | 4 |
+| Subtotal | 102 |
+| Contingency (15%) | 15 |
+| Total | 117 |
+
+At 25 hours per week, 117 hours is about 5 weeks.
+
+### 6.3 Schedule
+| Week | Dates | Hours | Work |
+| --- | --- | --- | --- |
+| 1 | Nov 24 to Nov 30 | 25 | Write test cases: Registration, Login, Forgot Password, Change Password, Basket, Checkout, Order History, Digital Wallet, Payment Options |
+| 2 | Dec 1 to Dec 7 | 25 | Finish test cases: Data Erasure, Data Export, Deluxe Membership, 2FA, Profile, then Medium and Low features (20 hours); traceability matrix (4); account setup for run 1 (1) |
+| 3 | Dec 8 to Dec 14 | 25 | Review of test cases (4); execute High-priority cases (21) |
+| 4 | Dec 15 to Dec 21 | 25 | Finish execution and the Edge check (5); exploratory sessions (10); bug reports with evidence (6); account setup for run 2 (1); start the summary report (3) |
+| 5 | Dec 22 to Dec 28 | about 17 | Finish the summary report (1); account setup for run 3 (1); contingency for retests and open items (15) |
+
+Estimated completion: around Dec 26 to Dec 28, 2026.
+
+### 6.4 Notes
+- Features that change or destroy state (Deluxe Membership, 2FA, Data Erasure) are executed last, on their own accounts.
+- Hours not worked in a week move the following weeks later by the same amount.
+- Checkpoint after week 1: compare the actual time per test case with the assumptions in 6.1, and re-estimate the rest of the schedule.
+- The schedule is reviewed again at the end of week 3, when execution begins.
+- Week 5 overlaps the year-end holidays, so it is the week most likely to slip.
