@@ -1,11 +1,67 @@
 # Test Plan: OWASP Juice Shop
 
-Version: 0.1 (draft)
+| Item | Value |
+| --- | --- |
+| Document version | 1.0 |
+| Date | 2026-11-23 |
+| Author | Kumar Shrestha, QC Engineer |
+| Application under test | OWASP Juice Shop v20.3.0 (local installation) |
+| Requirements baseline | v1.0 (git tag requirements-v1.0), 349 requirements in 30 feature groups |
+| Status | Final |
+
+## Contents
+1. Scope
+2. Risk Assessment
+3. Test Approach
+4. Test Environment and Test Data
+5. Entry and Exit Criteria
+6. Effort and Schedule
+7. Defect Management
+8. Deliverables
+9. Roles and Responsibilities
+10. Change Log
+
+## Introduction
+
+### Purpose
+This plan describes how OWASP Juice Shop v20.3.0 is tested in this project: what is tested, in which order, how, with what data, and how completion is judged. It is the basis for the test cases, the traceability matrix, the bug reports and the test summary report.
+
+### Objectives
+- Verify the application against the 349 baselined requirements
+- Find and report defects with enough evidence to reproduce them
+- Record unclear behavior as questions and observations instead of guessing
+- Show a complete, repeatable test process as a portfolio project
+
+### Test items
+The web application OWASP Juice Shop v20.3.0 running locally at http://localhost:3000, in the features listed in section 1.
+
+### References
+| Document | Location |
+| --- | --- |
+| Requirements (baseline v1.0) | test-plan/requirements.txt |
+| Features list | test-plan/features-list.txt |
+| Test data log | test-plan/test-data-log.md |
+| Time log | test-plan/time-log.md |
+| Test cases | test-cases/ |
+| Bug reports | bug-reports/ |
+| Evidence | evidence/ |
+| Summary report | summary-report/ |
+
+### Definitions
+| Term | Meaning |
+| --- | --- |
+| Pass | The actual result matches the expected result |
+| Fail | The actual result differs from the expected result |
+| Blocked | The test cannot be run because of an environment limit or another failure |
+| Not Tested | The test has not been run yet |
+| Defect | A confirmed difference between a requirement and the application's behavior |
+| Question | Behavior whose intended result is unclear without a business requirement document |
+| Observation | A fact worth recording that is not a defect |
 
 ## 1. Scope
 ### 1.1 In scope: full coverage
 
-Every requirement in the baseline (requirements v1.0, 349 requirements in 30 feature groups) is tested for these features:
+Every requirement of these features has at least one test case. The depth follows the priority in section 2: High gets positive, negative and boundary cases, Medium gets positive cases and the main negative case, and Low gets a short pass over the main behavior.
 
 - Account: Registration, Login, Forgot Password, Change Password
 - Shopping: Product List and Details, Search, Reviews, Basket
@@ -51,7 +107,7 @@ Chrome is the main browser: all test cases run there. Edge is used for a quick c
 ### 2.1 Method
 Each feature is scored for Impact (1 to 3) and Likelihood of failure (1 to 3). Risk = Impact x Likelihood.
 
-- Impact 3: money, account access, data loss or privacy or the core flow is blocked. 2: a feature is wrong or unusable but there is a workaround. 1: cosmetic or rarely used.
+- Impact 3: money, account access, data loss or privacy, or the core flow is blocked. 2: a feature is wrong or unusable but there is a workaround. 1: cosmetic or rarely used.
 - Likelihood 3: defects already found, or many rules and moving parts. 2: some complexity or untested limits. 1: simple, no defects seen.
 - Priority: High (6 or 9) is tested first with edge values. Medium (3 or 4) gets full requirement coverage after the High group. Low (1 or 2) gets a shorter pass over the main behavior.
 
@@ -99,7 +155,7 @@ Totals: 13 High, 6 Medium, 6 Low.
 | Test accounts can be locked or deleted | Later tests cannot run | Use throwaway accounts for 2FA, Data Erasure and Deluxe Membership; keep one main account untouched |
 | Only one account for some checks | Cross-user requirements cannot be tested | Create a second account; otherwise mark "Not tested" |
 | Public repository | Personal data could be exposed | Use test emails only; blur emails, IP addresses and 2FA secrets in evidence; do not commit exports |
-| Single tester | No independent review | Peer review of the plan and test cases if possible |
+| Single tester | No independent review | Self-review of the plan and test cases after a gap of at least one day; peer review if a reviewer becomes available |
 | Data-dependent results | Numbers such as 46 products may change | Record the data state at the start of each run |
 
 ## 3. Test Approach
@@ -262,8 +318,8 @@ Testing resumes when:
 - Start date: 2026-11-24 (test case writing)
 - No fixed deadline. The schedule shows the estimated duration.
 - About 215 test cases (estimate range 200 to 230): about 140 High, 55 Medium and 20 Low
-- Writing time per case: about 20 minutes for High, 10 for Medium, 8 for Low
-- Execution time per case: about 6 minutes for High (including evidence), 5 for Medium, 3 for Low
+- Writing time: High 140 x 20 minutes = 47 hours, Medium 55 x 10 minutes = 9 hours, Low 20 x 8 minutes = 3 hours; total 59 hours
+- Execution time: High 140 x 6 minutes = 14 hours, Medium 55 x 5 minutes = 4.6 hours, Low 20 x 3 minutes = 1 hour; plus the Edge check (about 2 hours) and retests (about 4 hours); total about 26 hours
 - Exploratory testing: 13 High-priority features, about 45 minutes each plus notes
 - About 15 bug reports at about 25 minutes each, including evidence
 - Contingency of 15% for reruns, restarts and unclear requirements
@@ -272,7 +328,7 @@ Testing resumes when:
 ### 6.2 Effort estimate
 | Activity | Hours |
 | --- | --- |
-| Write test cases (about 215) | 45 |
+| Write test cases (about 215) | 59 |
 | Traceability matrix (349 requirements) | 4 |
 | Review of test cases (after a gap of at least one day) | 4 |
 | Environment and account setup (3 runs) | 3 |
@@ -280,26 +336,81 @@ Testing resumes when:
 | Exploratory sessions | 10 |
 | Bug reports with evidence | 6 |
 | Test summary report | 4 |
-| Subtotal | 102 |
-| Contingency (15%) | 15 |
-| Total | 117 |
+| Subtotal | 116 |
+| Contingency (15%) | 17 |
+| Total | 133 |
 
-At 25 hours per week, 117 hours is about 5 weeks.
+At 25 hours per week, 133 hours is about 5.3 weeks.
 
 ### 6.3 Schedule
 | Week | Dates | Hours | Work |
 | --- | --- | --- | --- |
 | 1 | Nov 24 to Nov 30 | 25 | Write test cases: Registration, Login, Forgot Password, Change Password, Basket, Checkout, Order History, Digital Wallet, Payment Options |
-| 2 | Dec 1 to Dec 7 | 25 | Finish test cases: Data Erasure, Data Export, Deluxe Membership, 2FA, Profile, then Medium and Low features (20 hours); traceability matrix (4); account setup for run 1 (1) |
-| 3 | Dec 8 to Dec 14 | 25 | Review of test cases (4); execute High-priority cases (21) |
-| 4 | Dec 15 to Dec 21 | 25 | Finish execution and the Edge check (5); exploratory sessions (10); bug reports with evidence (6); account setup for run 2 (1); start the summary report (3) |
-| 5 | Dec 22 to Dec 28 | about 17 | Finish the summary report (1); account setup for run 3 (1); contingency for retests and open items (15) |
+| 2 | Dec 1 to Dec 7 | 25 | Write test cases: Data Erasure, Data Export, Deluxe Membership, 2FA, Profile, and the Medium and Low features |
+| 3 | Dec 8 to Dec 14 | 25 | Finish writing (9); traceability matrix (4); review of test cases (4); account setup for run 1 (1); start executing High-priority cases (7) |
+| 4 | Dec 15 to Dec 21 | 25 | Execution, Edge check and retests (19); exploratory sessions, first half (5); account setup for run 2 (1) |
+| 5 | Dec 22 to Dec 28 | 25 | Exploratory sessions, second half (5); bug reports with evidence (6); summary report (4); account setup for run 3 (1); contingency (9) |
+| 6 | Dec 29 to Jan 4 | about 8 | Contingency for retests and open items |
 
-Estimated completion: around Dec 26 to Dec 28, 2026.
+Estimated completion: around the end of December 2026, or the first days of January 2027 if all the contingency is used.
 
 ### 6.4 Notes
 - Features that change or destroy state (Deluxe Membership, 2FA, Data Erasure) are executed last, on their own accounts.
 - Hours not worked in a week move the following weeks later by the same amount.
 - Checkpoint after week 1: compare the actual time per test case with the assumptions in 6.1, and re-estimate the rest of the schedule.
 - The schedule is reviewed again at the end of week 3, when execution begins.
-- Week 5 overlaps the year-end holidays, so it is the week most likely to slip.
+- Weeks 5 and 6 overlap the year-end holidays, so they are the weeks most likely to slip.
+
+## 7. Defect Management
+
+### 7.1 Reporting rules
+- Each defect has its own file in bug-reports/, named BUG-NN-short-description.md
+- Every report has: ID and title, environment, requirement ID, severity, status, steps, expected result, actual result and evidence
+- Evidence is saved in evidence/ with the bug ID in the file name
+- A difference that might be intended is recorded as a question, not a defect
+- A defect is reproduced a second time before its status becomes Open
+- Evidence never shows real personal data: emails are test addresses, and other details are blurred
+
+### 7.2 Severity
+| Severity | Meaning | Example |
+| --- | --- | --- |
+| Critical | Data loss, a security breach or a crash, or the core flow is blocked with no workaround | The application stops responding at checkout |
+| High | A major feature is broken and no workaround exists | A valid order cannot be placed |
+| Medium | A feature is wrong or partly unusable, or validation is weak, but a workaround exists | BUG-01: the password advice is not enforced |
+| Low | A display, wording or consistency problem with no real impact | BUG-03: the password counter shows the wrong limit |
+
+### 7.3 Status
+| Status | Meaning |
+| --- | --- |
+| Draft | Noted, not yet reproduced or backed by evidence |
+| Open | Reproduced and reported with evidence |
+| Question | Intended behavior is unclear; waiting for clarification |
+| Withdrawn | Explained, or found not to be a defect |
+
+There is no development team in this project, so defects are not fixed or retested. A defect stays Open and is listed in the summary report. Priority is not assigned, because there is no release or fix schedule. Severity orders the findings in the summary report.
+
+## 8. Deliverables
+| Deliverable | Location | When |
+| --- | --- | --- |
+| Requirements baseline v1.0 | test-plan/requirements.txt | Done |
+| Test plan | test-plan/test-plan.md | Done |
+| Test cases | test-cases/test-cases.xlsx | Weeks 1 to 3 |
+| Traceability matrix | test-cases/traceability-matrix.xlsx | Week 3 |
+| Test data log | test-plan/test-data-log.md | Updated during execution |
+| Exploratory session notes | test-cases/exploratory-notes.md | Weeks 4 to 5 |
+| Bug reports | bug-reports/ | During execution |
+| Evidence | evidence/ | During execution |
+| Time log | test-plan/time-log.md | Updated each session |
+| Test summary report | summary-report/ | Week 5 |
+
+## 9. Roles and Responsibilities
+| Role | Person | Responsibilities |
+| --- | --- | --- |
+| Test lead and tester | Kumar Shrestha | Plan, design and write test cases, execute them, report defects, write the summary report |
+| Reviewer | None (self-review after a gap of at least one day) | Reviews the plan and the test cases |
+
+## 10. Change Log
+| Date | Version | Change |
+| --- | --- | --- |
+| 2026-11-23 | 1.0 | First complete version: sections 1 to 10 |
+| 2026-11-24 | 1.0 | Self-review after a one-day gap: [no changes / list of changes] |
