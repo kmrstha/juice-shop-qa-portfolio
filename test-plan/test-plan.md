@@ -198,7 +198,7 @@ Estimated size: about 200 to 230 test cases for 349 requirements. The exact numb
 | Low | A short pass over the main behavior |
 
 ### 3.5 Test case format
-Each test case is a row in a spreadsheet with: ID (TC-REG-01), requirement IDs covered, priority, preconditions, steps, test data, expected result, actual result, status (Pass, Fail, Blocked, Not Tested), bug ID, browser and run date.
+Each test case is a row in a spreadsheet with: ID (TC-REG-01), scenario (a one-line title), requirement IDs covered, priority, preconditions, steps, test data, expected result, actual result, status (Pass, Fail, Blocked, Not Tested), bug ID, browser and run date.
 
 ### 3.6 Exploratory testing
 One session of 30 to 45 minutes for each High-priority feature, with a written charter (for example: "Explore the Registration form with unusual inputs to find validation gaps"). Each session records its notes, any new questions, and any behavior the requirements missed. New findings are logged as questions or bugs, and requirements change only through the baseline change log.
