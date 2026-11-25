@@ -61,7 +61,7 @@ The web application OWASP Juice Shop v20.3.0 running locally at http://localhost
 ## 1. Scope
 ### 1.1 In scope: full coverage
 
-Every requirement of these features has at least one test case. The depth follows the priority in section 2: High gets positive, negative and boundary cases, Medium gets positive cases and the main negative case, and Low gets a short pass over the main behavior.
+The objective is to achieve full test coverage of all 349 requirements across 30 feature groups documented in the requirements baseline (v1.0). Test cases will be designed and executed progressively, with coverage tracked throughout the project.
 
 - Account: Registration, Login, Forgot Password, Change Password
 - Shopping: Product List and Details, Search, Reviews, Basket
@@ -95,7 +95,7 @@ Chrome is the main browser: all test cases run there. Edge is used for a quick c
 | AI chatbot replies | Blocked: the AI endpoint is not configured locally |
 | Performance and load | Needs different tools and an approach of its own |
 | Deep security testing | Observations only (see 1.3) |
-| Server-side checks without the browser (Q-03) | Planned for the API testing project |
+| Server-side checks without the browser (Q-03) | Outside the scope of this manual testing project |
 | Mobile and tablet layouts | Desktop only |
 | Browsers other than Chrome and Edge | Two browsers are enough for this project |
 | Real payments | Fake test cards only |
@@ -186,7 +186,7 @@ Grouping rules:
 - Do not group a requirement that fails or is suspected to fail (REQ-REG-12, REQ-REG-18, REQ-REG-07 and similar). Each gets its own case, so the failure is isolated and one bug maps to one case.
 - Do not group across features.
 - High-priority features are grouped less aggressively than Medium and Low ones.
-- Every requirement is covered by at least one case. A traceability matrix proves this.
+- Every requirement must be covered by at least one test case. The traceability matrix will be used to track and demonstrate coverage.
 
 Estimated size: about 200 to 230 test cases for 349 requirements. The exact number is set when the cases are written.
 
@@ -413,4 +413,4 @@ There is no development team in this project, so defects are not fixed or retest
 | Date | Version | Change |
 | --- | --- | --- |
 | 2026-11-23 | 1.0 | First complete version: sections 1 to 10 |
-| 2026-11-24 | 1.0 | Self-review after a one-day gap: [no changes / list of changes] |
+| 2026-11-24 | 1.0 | Self-review: clarified planned full coverage, progressive test case cretion and traceability; clarified that server-side checks are outside this manual testing project's scope. |
